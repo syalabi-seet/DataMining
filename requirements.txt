@@ -1,0 +1,8 @@
+--index-url https://bcms.bloomberg.com/pip/simple
+blpapi
+
+xbbg
+refinitiv-data
+pandas
+openpyxl
+loguru

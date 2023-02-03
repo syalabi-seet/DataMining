@@ -1,0 +1,877 @@
+field_id,index,mnemonic,description,FA
+A0001,0,ARD_REVENUES,ARD Revenues,True
+A0012,11,ARD_DEPRECIATION_AMORTIZATION,ARD Depreciation and Amortization,True
+A0013,12,ARD_OTHER_OPERATING_EXPENSES,ARD Other Operating Expenses,True
+A0017,16,ARD_GL_ON_SALE_OF_ASSETS,ARD (Gain)/Loss On Sale of Assets,True
+A0018,17,ARD_TOT_NONCURRENT_LIABILITIES,ARD Total Noncurrent Liabilities,True
+A0022,21,ARD_EQY_IN_EARN_AFFILIATE_JV,ARD Equity In Earnings of Affiliate/Joint Ventures,True
+A0023,22,ARD_INT_INCOME,ARD Interest Income,True
+A0029,28,ARD_INCOME_TAX_EXP_BENEFIT,ARD Income Tax Expense (Benefit),True
+A0036,35,ARD_MINORITY_NONCONTROL_INTEREST,ARD Minority/Non Controlling Interest,True
+A0037,36,ARD_NET_INC,ARD Net Income,True
+A0038,37,ARD_FOR_CRNCY_TRANSLATION_ADJ,ARD Foreign Currency Translation Adjustments,True
+A0039,38,ARD_UNREALIZED_GL_ON_SECS,ARD Unrealized Gain (Loss) On Securities,True
+A0040,39,ARD_CHG_FAIR_VAL_OF_DERIVATIVES,ARD Change In Fair Value of Derivatives,True
+A0044,43,ARD_OTHER_COMPREHENSIVE_INCOME,ARD Other Comprehensive Income,True
+A0045,44,ARD_CASH_AND_EQUIVALENTS,ARD Cash and Equivalents,True
+A0048,47,ARD_INVENTORY,ARD Inventories,True
+A0055,52,ARD_ASSETS_HELD_FOR_SALE,ARD Assets Held For Sale,True
+A0068,65,ARD_ACCUMULATED_DEPREC,ARD Accumulated Depreciation,True
+A0069,66,ARD_PROPERTY_PLANT_EQUIP_NET,ARD Property Plant & Equipment - Net,True
+A0071,68,ARD_TOTAL_INTANGIBLE_ASSET_NET,ARD Total Intangible Assets - Net,True
+A0079,75,ARD_OTHER_NONCURRENT_ASSET,ARD Other Noncurrent Assets,True
+A0087,83,ARD_ST_BORROW,ARD Short-Term Borrowings,True
+A0091,87,ARD_DEFERRED_UNEARNED_REV_ST,ARD Deferred/Unearned Revenue (Short-Term),True
+A0094,90,ARD_OTHER_CURRENT_LIABILITIES,ARD Other Current Liabilities,True
+A0098,94,ARD_LT_DEBT,ARD Long Term Debt,True
+A0103,98,ARD_DEFERRED_UNEARNED_REV_LT,ARD Deferred/Unearned Revenue (Long-Term),True
+A0106,100,ARD_OTH_NONCURRENT_LIABILITIES,ARD Other Noncurrent Liabilities,True
+A0108,102,ARD_MIN_NONCONTROL_INT_SE,ARD Minority/Non Controlling Int (Stckhldrs Eqty),True
+A0122,116,ARD_DEPRECIATION_AND_AMORT_CF,ARD Depreciation And Amortization - CF,True
+A0134,128,ARD_OTHER_NON_CASH_ITEMS,ARD Other Non-Cash Items,True
+A0136,130,ARD_CHANGE_IN_INVENTORIES,ARD Change in Inventories,True
+A0146,140,ARD_DISPOSAL_OF_FIXED_ASSETS,ARD Disposal of Fixed Assets,True
+A0147,141,ARD_CAPITAL_EXPENDITURES,ARD Capital Expenditures,True
+A0148,142,ARD_PROCEEDS_FROM_LT_INVEST,ARD Proceeds From Long-Term Investments,True
+A0150,144,ARD_PURCHASES_OF_LT_INVEST,ARD Purchases of Long-Term Investments,True
+A0157,151,ARD_OTHER_INVESTING_ACTIVITIES,ARD Other Investing Activities,True
+A0158,152,ARD_DIVIDEND_PD,ARD Dividends Paid,True
+A0162,156,ARD_INCR_IN_LT_BORROW,ARD Increase In Long-Term Borrowings,True
+A0165,159,ARD_ISSUANCE_OF_COMMON_STOCK,ARD Issuance of Common Stock,True
+A0166,160,ARD_REPURCHASE_OF_COMMON_STOCK,ARD Repurchase of Common Stock,True
+A0167,161,ARD_EFF_OF_EXCH_RATES_ON_CASH,ARD Effect of Exchange Rates On Cash,True
+A0169,163,ARD_OTHER_FINANCING_ACTIVITIES,ARD Other Financing Activities,True
+A0201,174,ARD_EQY_IN_EARN_OF_AFF_JV_CF,ARD Equity In Earnings Of Affiliates/JV-CF,True
+A0202,175,ARD_INCOME_TAX_ACCRUED_PAYABLE,ARD Income Taxes Accrued/Payable,True
+A0211,183,ARD_CASH_PAID_FOR_TAXES,ARD Cash Paid For Taxes,True
+A0213,185,ARD_OTHER_OPERATING_INC,ARD Other Operating Income,True
+A0302,214,ARD_BASIC_EPS,ARD Basic EPS,True
+A0305,217,ARD_DILUTED_EPS,ARD Diluted EPS,True
+A0332,223,ARD_DEFERRED_TAX_LIAB_LT,ARD Deferred Tax Liabilities (Long-Term),True
+A0333,224,ARD_DEFERRED_TAX_ASSETS_LT,ARD Deferred Tax Assets (Long-Term),True
+A0502,369,ARD_TOTAL_COMPREHENSIVE_INCOME,ARD Total Comprehensive Income,True
+A0512,379,ARD_TOTAL_SHAREHOLDERS_EQUITY,ARD Total Shareholders Equity,True
+A0516,383,ARD_TOT_CASH_FLOWS_FROM_OPS,ARD Total Cash Flows From Operations,True
+A0525,389,ARD_TOT_CASHFLOWS_FROM_INVESTING,ARD Total Cash Flows From Investing,True
+A0526,390,ARD_TOT_CASHFLOWS_FROM_FINANCING,ARD Total Cash Flows From Financing,True
+A0690,492,ARD_DERIVATIVE_ASSET_ST,ARD Derivative Assets (Short-Term),True
+A0749,551,ARD_INCOME_BEFORE_INCOME_TAXES,ARD Income Before Income Taxes,True
+A0753,555,ARD_TOT_ASSETS,ARD Total Assets,True
+A0754,556,ARD_TOT_LIABILITIES,ARD Total Liabilities,True
+A0757,559,ARD_NET_CHANGE_IN_CASH,ARD Net Change In Cash,True
+A0763,561,ARD_OPERATING_INCOME,ARD Operating Income,True
+A1011,750,ARD_TOTAL_REVENUES,ARD Total Revenue,True
+A1029,767,ARD_CUSTOMER_DEPOSIT_ADVANCES_ST,ARD Customer Deposits/Advances (Short-Term),True
+A1030,768,ARD_CASH_CASH_EQUIV_END_OF_PER,ARD Cash and Cash Equivalents (End of Period),True
+A1064,802,ARD_DUE_FROM_PARTIES_AFF_ST,ARD Due From Parties/Affiliates (Short-Term),True
+A1065,803,ARD_TOTAL_CUR_ASSETS,ARD Total Current Assets,True
+A1070,808,ARD_TOTAL_CURRENT_LIABILITIES,ARD Total Current Liabilities,True
+A1072,810,ARD_CUSTOMER_DEPOSITS_ADVANCE_LT,ARD Customer Deposits/Advances (Long-Term),True
+A1085,823,ARD_ISSUANCE_OF_PREFERRED_STK,ARD Issuance of Preferred Stock,True
+A1086,824,ARD_REPURCHASE_PREFERRED_STK,ARD Repurchase of Preferred Stock,True
+A1092,830,ARD_OTH_OPERATING_INC_EXP_NET,ARD Other Operating (Income)/Expense - Net,True
+A1097,835,ARD_CASH_CASH_EQUIV_BEG_OF_PER,ARD Cash and Cash Equivalents (Beg of Period),True
+A1244,973,ARD_DERIVATIVE_ASSET_LT,ARD Derivative Assets (Long-Term),True
+A2671,1637,ARD_INCREASE_OF_CAPITAL_LEASE,ARD Increase of Capital Lease,True
+A2706,1656,ARD_PURCHASE_OF_INTANGIBLES,ARD Purchase of Intangibles,True
+A2707,1657,ARD_SALE_OF_INTANGIBLES,ARD Sale of Intangibles,True
+A2749,1693,ARD_OTHER_RECEIVABLES_LT,ARD Other Receivables (Long-Term),True
+A2789,1731,ARD_DERIVATIVE_LIABILITIES_ST,ARD Derivative Liabilities (Short-Term),True
+A2791,1733,ARD_DERIVATIVE_LIABILITIES_LT,ARD Derivative Liabilities (Long-Term),True
+A2845,1775,ARD_CHG_IN_FAIR_VAL_OF_DER_TAX,ARD Tax Related To Chg In Fair Value of Derivative,True
+A3003,1862,ARD_TOT_CF_FROM_OPS_BEF_WORK_CAP,ARD Total Cashflow From Ops Before Working Capital,True
+A3009,1867,ARD_ACCTS_REC_OTHER_REC,ARD Accounts Receivable And Other Receivables,True
+A3063,1911,ARD_CHNG_TRADE_PAY_OTH_CUR_LIAB,ARD Change In Trade Payables & Other Current Liab,True
+A3103,1945,ARD_DIV_PAID_OUTSIDE_EQTY_INT,ARD Dividends Paid To Outside Equity Interests,True
+A3109,1951,ARD_DIV_RECEIVED_FROM_EQY_AFFIL,ARD Dividends Received From Equity Affiliates,True
+A3130,1964,ARD_UNUSUAL_ITEMS,ARD Unusual Items,True
+A3181,2004,ARD_TOTAL_FINANCIAL_LOSSES,ARD Total Financial Costs,True
+A3185,2008,ARD_INTEREST_INCOME_CF,ARD Interest Income - CF,True
+A3201,2024,ARD_INVEST_UNCONSOLIDATED_SUBSID,ARD Investments In Unconsolidated Subsidiaries,True
+A3214,2033,ARD_LONG_TERM_LOANS,ARD Long-Term Loans,True
+A3233,2049,ARD_NET_ASSETS,ARD Net Assets,True
+A3320,2125,ARD_TRADE_RECEIVABLES_GROSS,ARD Trade Receivables-Gross,True
+A3323,2127,ARD_TOTAL_NONCURRENT_ASSETS,ARD Total Non-Current Assets,True
+A3406,2192,ARD_INCR_NON_EQTY_MINORITY_INT,ARD Increase Of Non Equity Minority Interest,True
+A3413,2198,ARD_PROF_AFTER_TAX_BEF_MINORITY,ARD Profit After Taxation Before Minority,True
+A3455,2224,ARD_FINANCIAL_INCOME,ARD Financial Income,True
+A3560,2309,ARD_DECREASE_IN_BORROWINGS,ARD Decrease In Borrowings,True
+A3561,2310,ARD_PROC_FROM_SALE_OF_ASSOC_JV,ARD Proceeds From Sale Of Assocs/Joint Ventures,True
+A3575,2323,ARD_PURCHASE_ASSOC_JOINT_VENTURE,ARD Purchase Of Associates/Joint Ventures,True
+A3576,2324,ARD_INCREASE_IN_BORROWINGS,ARD Increase In Borrowings,True
+A3589,2335,ARD_INCR_DECR_IN_TRADE_OTHER_REC,ARD Increase/Decrease In Trade & Other Receivables,True
+A3596,2341,ARD_ADV_REPAID_RELATED_ENTITIES,ARD Advances/Loans Repaid From Related Entities,True
+A3601,2345,ARD_PROF_BEFORE_TAX_MINORITY_INT,ARD Profit Before Taxation And Minority Interest,True
+A3610,2350,ARD_REPAYMENT_FINANCE_LEASES,ARD Repayment Of Finance Leases,True
+A3662,2390,ARD_AVAIL_SALE_SECS_GREATER_1YR,ARD Available For Sale Securities-More Than 1 Year,True
+A3674,2396,ARD_AMTS_DUE_ASSOC_COMPANIES,ARD Amounts Due To Associated Companies,True
+A3690,2412,ARD_NET_CASH_FROM_OPERATING_ACT,ARD Net Cash From Operating Activities,True
+A3732,2446,ARD_EQY_INVEST_ASSOC_AFFILIATES,ARD Equity Investments In Associates/Affiliates,True
+A3733,2447,ARD_INVEST_JOINT_CONTROLLED_ENT,ARD Investments In Joint Controlled Entities,True
+A3734,2448,ARD_NET_EQTY_INVEST_JV_ASSOC,ARD Net Equity Investments In Joint Ventures/Assoc,True
+A3794,2488,ARD_ST_PROVISIONS,ARD Short-Term Provisions,True
+A3796,2490,ARD_TOTAL_RESERVE,ARD Total Reserve,True
+A3824,2513,ARD_TRADE_PAYABLE_OTHER_PAYABLES,ARD Trade Payable And Other Payables,True
+A3846,2525,ARD_PROCEEDS_SALE_SUBS_NET_CASH,ARD Proceeds From Sale Of Subs (Net Of Cash Sold),True
+A3847,2526,ARD_PAYMENT_OF_ACQ_OF_SUBSIDIARY,ARD Payment Of Acquisition Of Subsidiary,True
+A3891,2562,ARD_TOTAL_SHARE_CAPITAL,ARD Total Share Capital,True
+A3926,2585,ARD_FINANCE_COSTS,ARD Finance Costs,True
+A3954,2601,ARD_NET_GL_FOREIGN_CURR_TRANS,ARD Net Gain/Loss On Foreign Currency Transactions,True
+A3975,2617,ARD_TOT_SHARE_EQY_EXCL_MINORITY,ARD Total Shareholders Equity Excluding Minority,True
+A4473,2982,ARD_NET_INVESTMENT_INCOME_CF,ARD Net Investment Income - CF,True
+A5033,3346,ARD_INT_REC_FROM_INVESTING_ACT,ARD Interest Received From Investing Activities,True
+A5052,3361,ARD_SHARE_CAP_ADDL_PAID_IN_CAP,ARD Share Capital & Additional Paid In Capital,True
+A5289,3504,ARD_DIV_REC_INVESTING_ACTIVITIES,ARD Dividend Received From Investing Activities,True
+A5290,3505,ARD_INT_PAID_FINANCING_ACTS,ARD Interest Paid From Financing Activities,True
+A5806,3874,ARD_EBITDA_IS,ARD EBITDA - IS,True
+A6089,4100,ARD_PROCEEDS_OF_ISSU_OF_BONDS,ARD Proceeds Of issuance Of Bonds,True
+A6090,4101,ARD_PAY_FOR_REDEMPTION_OF_BONDS,ARD Payment For Redemption Of Bonds,True
+B0274,7612,ARD_COMPREHENSIVE_INC_ATTRIB_MI,ARD Comprehensive Income Attrib to Minority Int,True
+B0861,8073,ARD_COMPREHENSIVE_INCOME_NET_INC,ARD Net Income - Comprehensive Income,True
+B4647,10346,ARD_TOT_ADJUSTMENTS_COMP_INC,ARD Total Adjustments Comprehensive Income,True
+B4648,10347,ARD_TOT_COMP_INC_INCL_MIN_INT,ARD Total Comprehensive Inc Including Minority Int,True
+BE001,11868,BEST_SALES,BEst Sales,True
+BE002,11869,BEST_OPP,BEst OPP,True
+BE003,11870,BEST_EBITDA,BEst EBITDA,True
+BE005,11872,BEST_PTP,BEst PTP,True
+BE006,11873,BEST_NET_INCOME,BEst Net Income,True
+BE008,11875,BEST_EPS,BEst EPS,True
+BE245,12039,BEST_GROSS_MARGIN,BEst Gross Margin,True
+BM079,13114,BS_DEFERRED_TAX_ASSETS_LT,Deferred Tax Assets - Long Term,True
+BM080,13115,BS_DEFERRED_TAX_LIABILITIES_LT,Deferred Tax Liabilities - Long Term,True
+BM281,13306,BS_LONG_TERM_INVESTMENTS,Long Term Investments,True
+BM284,13309,BS_INTEREST_&_DIVIDENDS_PAYABLE,Interest and Dividends Payable,True
+BM311,13336,BS_UNBILLED_REVENUES,Unbilled Revenues,True
+BM312,13337,BS_DERIV_&_HEDGING_ASSETS_ST,Derivative and Hedging Assets ST,True
+BM313,13338,BS_ASSETS_HELD_FOR_SALE_ST,Assets Held for Sale Short Term,True
+BM317,13342,BS_PREPAID_EXPENSE_LT,Prepaid Expense Long Term,True
+BM318,13343,BS_DERIV_&_HEDGING_ASSETS_LT,Derivative and Hedging Assets LT,True
+BM322,13347,BS_DERIVATIVE_&_HEDGING_LIABS_ST,Derivative and Hedging Liabilities ST,True
+BM325,13350,BS_PENSIONS_LT_LIABS,Pensions Long Term Liabilities,True
+BM326,13351,BS_OPRB_LT_LIABS,Other Post-Retirement Benefits LT Liabilities,True
+BM327,13352,BS_DEFERRED_COMP_LT_LIABS,Deferred Compensation LT Liabilities,True
+BM328,13353,BS_DERIVATIVE_&_HEDGING_LIABS_LT,Derivative and Hedging Liabilities LT,True
+BM919,13705,BS_TAXES_PAYABLE,Accrued Taxes,True
+BS008,13727,NOTES_RECEIVABLE,Notes Receivable,True
+BS010,13729,BS_CASH_NEAR_CASH_ITEM,Cash and Cash Equivalents,True
+BS011,13730,BS_MKT_SEC_OTHER_ST_INVEST,Short Term Investments,True
+BS012,13731,BS_ACCT_NOTE_RCV,Accounts & Notes Receivable,True
+BS013,13732,BS_INVENTORIES,Inventories,True
+BS015,13734,BS_CUR_ASSET_REPORT,Total Current Assets,True
+BS029,13748,BS_LT_INVEST,LT Investments & Receivables,True
+BS030,13749,BS_GROSS_FIX_ASSET,Property Plant and Equip Gross,True
+BS031,13750,BS_ACCUM_DEPR,Accumulated Depreciation,True
+BS032,13751,BS_NET_FIX_ASSET,Property Plant & Equipment Net,True
+BS033,13752,BS_OTHER_ASSETS_DEF_CHRG_OTHER,Other Long Term Assets,True
+BS035,13754,BS_TOT_ASSET,Total Assets,True
+BS036,13755,BS_ACCT_PAYABLE,Accounts Payable,True
+BS047,13766,BS_ST_BORROW,Short Term Debt,True
+BS050,13769,BS_CUR_LIAB,Total Current Liabilities,True
+BS051,13770,BS_LT_BORROW,Long Term Debt,True
+BS061,13780,BS_PFD_EQTY_&_HYBRID_CPTL,Preferred Equity and Hybrid Capital,True
+BS062,13781,MINORITY_NONCONTROLLING_INTEREST,Minority/Non Controlling Interest,True
+BS064,13783,BS_SH_CAP_AND_APIC,Share Capital & APIC,True
+BS080,13799,BS_PENSION_RSRV,Pension and Post-Retirement Obligations,True
+BS081,13800,BS_SH_OUT,Shares Outstanding,True
+BS089,13806,BS_INVEST_IN_ASSOC_CO,Investments in Affiliates,True
+BS091,13808,BS_NUM_OF_TSY_SH,Number of Treasury Shares,True
+BS092,13809,BS_AMT_OF_TSY_STOCK,Amount of Treasury Stock,True
+BS119,13836,BS_PREPAY,Prepaid Expenses,True
+BS120,13837,BS_OTHER_CUR_ASSET_LESS_PREPAY,Miscellaneous Short-Term Assets,True
+BS125,13842,BS_ACCRUAL,Other Accounts Payable and Accruals,True
+BS135,13852,INVTRY_RAW_MATERIALS,Inventory Raw Materials,True
+BS136,13853,INVTRY_IN_PROGRESS,Inventory In Progress,True
+BS137,13854,INVTRY_FINISHED_GOODS,Inventory Finished Goods,True
+BS138,13855,BS_DISCLOSED_INTANGIBLES,Total Intangible Assets,True
+BS141,13858,BS_NUM_OF_SHAREHOLDERS,Number Of Shareholders,True
+BS147,13864,BS_OTHER_INV,Other Inventory/Allowances,True
+BS158,13874,ST_CAPITAL_LEASE_OBLIGATIONS,Short Term Capital Lease Obligations,True
+BS159,13875,LT_CAPITAL_LEASE_OBLIGATIONS,Long Term Capital Lease Obligations,True
+BS161,13876,BS_GOODWILL,Goodwill,True
+BS180,13879,BS_CURR_RENTAL_EXPENSE,Rental Expense,True
+BS187,13886,BS_FUTURE_MIN_OPER_LEASE_OBLIG,Future Minimum Operating Lease Obligations,True
+BS190,13889,BS_PURE_RETAINED_EARNINGS,Retained Earnings,True
+BS210,13902,BS_TOTAL_CAPITAL_LEASES,Total Capital Leases,True
+BS496,14188,BS_ACCTS_REC_EXCL_NOTES_REC,Accounts Receivable - Net,True
+BS497,14189,BS_OPTIONS_GRANTED,Options Granted During Period,True
+BS498,14190,BS_OPTIONS_OUTSTANDING,Options Outstanding End Of Period,True
+BS515,14201,ST_DEFERRED_REVENUE,Short-term Deferred Revenue,True
+BS516,14202,LT_DEFERRED_REVENUE,Long-term Deferred Revenue,True
+BS517,14203,BS_TOT_COM_PAPER_ISSUED,Total Commercial Paper Issued,True
+BS640,14251,BS_LT_RECEIVABLES,Long Term Receivables,True
+BS644,14255,BS_ACCRUED_LIABILITIES,Accrued Liabilities,True
+BS650,14261,BS_CURR_PORTION_LT_DEBT,Current Portion of LT Debt,True
+BS897,14457,PENSION_LIABILITIES,Pension Liabilities,True
+CF010,14797,CF_NET_INC,Cash Flow Net Income,True
+CF011,14798,CF_DEPR_AMORT,Depreciation & Amortization,True
+CF013,14800,CF_CHNG_NON_CASH_WORK_CAP,Changes in Non-Cash Work Cap,True
+CF015,14801,CF_CASH_FROM_OPER,Cash From Operations,True
+CF018,14804,CF_DECR_INVEST,Decrease in Investments,True
+CF019,14805,CF_INCR_INVEST,Increase in Investments,True
+CF025,14810,CF_CASH_FROM_INV_ACT,Cash from Investing Activities,True
+CF026,14811,CF_DVD_PAID,Dividends Paid,True
+CF030,14815,CF_INCR_CAP_STOCK,Increase in Capital Stocks,True
+CF031,14816,CF_DECR_CAP_STOCK,Decrease in Capital Stocks,True
+CF035,14820,CF_CASH_FROM_FNC_ACT,Cash from Financing Activities,True
+CF036,14821,CF_NET_CHNG_CASH,Net Changes in Cash,True
+CF073,14856,CF_CASH_PAID_FOR_TAX,Cash Paid for Taxes,True
+CF109,14866,CF_CHANGE_IN_INVENTORIES,Change In Inventories,True
+CF120,14876,CF_ACT_CASH_PAID_FOR_INT_DEBT,Actual Cash Paid for Interest on Debt,True
+CF123,14877,CF_INTEREST_RECEIVED,Interest Received,True
+CF125,14879,CF_NET_CASH_PAID_FOR_AQUIS,Net Cash Paid for Acquisitions,True
+CF288,14957,CF_NET_CASH_DISCONTINUED_OPS_INV,Net Cash From Discontinued Operations - Investing,True
+CF289,14958,CF_NET_CASH_DISCONTINUED_OPS_FIN,Net Cash From Discontinued Operations - Financing,True
+CF291,14960,CF_EFFECT_FOREIGN_EXCHANGES,Effect of Foreign Exchange Rates,True
+CF295,14964,CF_DISPOSAL_OF_INTANGIBLE_ASSETS,Disposal of Intangible Assets,True
+CF297,14966,CF_ACQUISITION_OF_INTANG_ASSETS,Acquisition of Intangible Assets,True
+CF299,14968,CF_CASH_FOR_DIVESTITURES,Cash from Divestitures,True
+CF300,14969,CF_CASH_FOR_JOINT_VENTURES_ASSOC,Cash for Joint Ventures/Associates,True
+CF315,14973,CF_NT_CSH_RCVD_PD_FOR_ACQUIS_DIV,Net Csh Rcvd / Paid for Acquisition / Divestiture,True
+CF316,14974,CF_CASH_FOR_ACQUIS_SUBSIDIARIES,Cash for Acquisition of Subsidiaries,True
+CF322,14975,CF_DISPOSAL_OF_FIXED_PROD_ASSETS,Disposal of Fixed Production Assets,True
+CF323,14976,CF_PURCHASE_OF_FIXED_PROD_ASSETS,Purchase of Fixed Production Assets,True
+DS124,16107,EQY_SH_OUT,Current Shares Outstanding,True
+DS377,16326,EQY_FLOAT,Equity Float,True
+DS807,16663,LISTED_SH_OUT,Listed Shares Outstanding,True
+DX830,18573,ACCOUNTING_STANDARD,Accounting Standard,True
+F0202,22354,INCREMENTAL_OPERATING_MARGIN,Incremental Operating Margin,True
+F0205,22357,CFO_TO_AVG_CURRENT_LIABILITIES,CFO to Average Current Liabilities,True
+F0206,22358,TOTAL_DEBT_TO_EBIT,Total Debt to Earnings before Interest Taxes,True
+F0207,22359,NET_DEBT_TO_EBIT,Net Debt to Earnings before Interest Taxes,True
+F0208,22360,EBITDA_AFT_CAPEX_TO_CASH_INT_PD,EBITDA after CAPEX to Cash Interest Paid,True
+F0209,22361,EBITDA_TO_CASH_INTEREST_PAID,EBITDA to Cash Interest Paid,True
+F0210,22362,EBIT_TO_CASH_INTEREST_PAID,EBIT to Cash Interest Paid,True
+F0211,22363,NET_INCOME_TO_COMMON_MARGIN,Net Income to Common Margin,True
+F0212,22364,NORM_NET_INC_TO_NET_INC_FO_COM,Normalized Net Income to Net Income for Common,True
+F0213,22365,5_YEAR_AVERAGE_ADJUSTED_ROE,5 Year Average Adjusted Return on Equity,True
+F0214,22366,AFTER_TAX_INTEREST_EXPENSE,After Tax Interest Expense,True
+F0215,22367,NET_FIXED_ASSETS_1_YEAR_GROWTH,Net Fixed Assets 1 Year Growth,True
+F0216,22368,SHORT_TERM_DEBT_1_YEAR_GROWTH,Short Term Debt 1 Year Growth,True
+F0217,22369,TOTAL_DEBT_1_YEAR_GROWTH,Total Debt 1 Year Growth,True
+F0218,22370,TOTAL_EQUITY_1_YEAR_GROWTH,Total Equity 1 Year Growth,True
+F0219,22371,NET_CHANGE_IN_CASH_1_YEAR_GROWTH,Net Change in Cash 1 Year Growth,True
+F0220,22372,FREE_CASH_FLOW_1_YEAR_GROWTH,Free Cash Flow 1 Year Growth,True
+F0221,22373,CASH_FLOW_TO_FIRM_1_YEAR_GROWTH,Cash Flow to Firm 1 Year Growth,True
+F0230,22382,PREFERRED_EQUITY_&_MINORITY_INT,Preferred Equity and Minority Interest,True
+F0416,22568,HIGH_PRICE_TO_TANGIBLE_BPS,High Price to Tangible Book Value per Share,True
+F0417,22569,LOW_PRICE_TO_TANGIBLE_BPS,Low Price to Tangible Book Value per Share,True
+F0418,22570,AVERAGE_PRICE_TO_TANGIBLE_BPS,Average Price to Tangible Book Value per Share,True
+F0419,22571,HIGH_PRICE_TO_FREE_CASH_FLOW,High Price to Free Cash Flow,True
+F0420,22572,LOW_PRICE_TO_FREE_CASH_FLOW,Low Price to Free Cash Flow,True
+F0421,22573,AVERAGE_PRICE_TO_FREE_CASH_FLOW,Average Price to Free Cash Flow,True
+F0422,22574,HIGH_EV_TO_T12M_SALES,High Periodic EV to Trailing 12 Month Sales,True
+F0423,22575,LOW_EV_TO_T12M_SALES,Low Periodic EV to Trailing 12 Month Sales,True
+F0424,22576,AVERAGE_EV_TO_T12M_SALES,Average Periodic Enterprise Value to T12M Sales,True
+F0428,22579,HIGH_EV_TO_T12M_EBITDA,High Periodic EV to Trailing 12 Month EBITDA,True
+F0429,22580,LOW_EV_TO_T12M_EBITDA,Low Periodic EV to Trailing 12 Month EBITDA,True
+F0430,22581,AVG_EV_TO_T12M_EBITDA,Average Periodic Enterprise Value to T12M EBITDA,True
+F0434,22584,HIGH_EV_TO_T12M_EBIT,High Periodic EV to Trailing 12 Month EBIT,True
+F0435,22585,LOW_EV_TO_T12M_EBIT,Low Periodic EV to Trailing 12 Month EBIT,True
+F0436,22586,AVERAGE_EV_TO_T12M_EBIT,Average Periodic EV to Trailing 12 Month EBIT,True
+F0437,22587,HIGH_ENTERPRISE_VALUE,High Periodic Enterprise Value,True
+F0438,22588,LOW_ENTERPRISE_VALUE,Low Periodic Enterprise Value,True
+F0439,22589,AVERAGE_ENTERPRISE_VALUE,Average Periodic Enterprise Value,True
+F0440,22590,AVERAGE_PRICE_EARNINGS_RATIO,Average Price Earnings Ratio,True
+F0453,22600,AVERAGE_PRICE_TO_BOOK_RATIO,Average Price to Book Ratio,True
+F0454,22601,AVERAGE_PRICE_TO_SALES_RATIO,Average Price to Sales Ratio,True
+F0456,22603,AVERAGE_PRICE_TO_CASH_FLOW,Average Price to Cash Flow,True
+F0458,22605,PX_ERN_RATIO_WITH_HIGH_CLOS_PX,Price Earnings Ratio with High Closing Price,True
+F0459,22606,PX_ERN_RATIO_WITH_LOW_CLOS_PX,Price Earnings Ratio with Low Closing Price,True
+F0460,22607,HIGH_CLOSING_PRICE_TO_BOOK_RATIO,High Closing Price to Book Ratio,True
+F0461,22608,LOW_CLOSING_PRICE_TO_BOOK_RATIO,Low Closing Price to Book Ratio,True
+F0466,22613,HIGH_CLOSING_PRICE_TO_CASH_FLOW,High Closing Price to Cash Flow,True
+F0467,22614,LOW_CLOSING_PRICE_TO_CASH_FLOW,Low Closing Price to Cash Flow,True
+F0470,22617,FCF_TO_FIRM_1_YEAR_GROWTH,Free Cash Flow to Firm 1 Year Growth,True
+F0471,22618,NET_INCOME_TO_COMMON_5_YR_GROWTH,Net Income to Common Growth 5 Year CAGR,True
+F0472,22619,ACCOUNTS_RECEIVABLE_5_YR_GROWTH,Accounts Receivable 5 Year Growth,True
+F0473,22620,INVENTORY_5_YEAR_GROWTH,Inventory 5 Year Growth,True
+F0474,22621,NET_FIXED_ASSETS_5_YEAR_GROWTH,Net Fixed Assets 5 Year Growth,True
+F0476,22623,EMPLOYEES_5_YEAR_GROWTH,Employees 5 Year Growth,True
+F0477,22624,ACCOUNTS_PAYABLE_5_YEAR_GROWTH,Accounts Payable 5 Year Growth,True
+F0478,22625,SHORT_TERM_DEBT_5_YEAR_GROWTH,Short Term Debt 5 Year Growth,True
+F0479,22626,TOTAL_DEBT_5_YEAR_GROWTH,Total Debt 5 Year Growth,True
+F0480,22627,TOTAL_CAPITAL_5_YEAR_GROWTH,Total Capital 5 Year Growth,True
+F0483,22629,FREE_CASH_FLOW_5_YEAR_GROWTH,Free Cash Flow 5 Year Growth,True
+F0484,22630,CASH_FLOW_TO_FIRM_5_YEAR_GROWTH,Cash Flow to Firm 5 Year Growth,True
+F0485,22631,FCF_TO_FIRM_5_YEAR_GROWTH,Free Cash Flow to Firm 5 Year Growth,True
+F0486,22632,REVENUE_SEQUENTIAL_GROWTH,Revenue Sequential Growth,True
+F0487,22633,EBITDA_SEQUENTIAL_GROWTH,EBITDA Growth Sequential,True
+F0488,22634,OPERATING_INCOME_SEQ_GROWTH,EBIT Growth Sequential,True
+F0489,22635,NET_INCOME_TO_COMMON_SEQ_GROWTH,Net Income to Common Growth Sequential,True
+F0490,22636,EPS_DILUTED_SEQUENTIAL_GROWTH,Earnings per Share Diluted Sequential Growth,True
+F0491,22637,EPS_DIL_BEF_EXTRAORD_SEQ_GRWTH,EPS Diluted before Extraordinary Sequential Growth,True
+F0492,22638,EPS_DILUTED_BEF_ABNRML_SEQ_GRWTH,EPS Diluted before Abnormal Sequential Growth,True
+F0493,22639,DPS_SEQUENTIAL_GROWTH,Dividends per Share Sequential Growth,True
+F0494,22640,ACCOUNTS_RECEIVABLE_SEQ_GROWTH,Accounts Receivable Sequential Growth,True
+F0495,22641,INVENTORY_SEQUENTIAL_GROWTH,Inventory Sequential Growth,True
+F0496,22642,FIXED_ASSETS_SEQUENTIAL_GROWTH,Fixed Assets Sequential Growth,True
+F0497,22643,TOTAL_ASSETS_SEQUENTIAL_GROWTH,Total Assets Sequential Growth,True
+F0498,22644,WORKING_CAPITAL_SEQ_GROWTH,Working Capital Sequential Growth,True
+F0499,22645,EMPLOYEES_SEQUENTIAL_GROWTH,Employees Sequential Growth,True
+F0500,22646,ACCOUNTS_PAYABLE_SEQ_GROWTH,Accounts Payable Sequential Growth,True
+F0501,22647,ST_DEBT_SEQUENTIAL_GROWTH,Short Term Debt Sequential Growth,True
+F0502,22648,TOTAL_DEBT_SEQUENTIAL_GROWTH,Total Debt Sequential Growth,True
+F0503,22649,TOTAL_EQUITY_SEQUENTIAL_GROWTH,Total Equity Sequential Growth,True
+F0504,22650,TOTAL_CAPITAL_SEQUENTIAL_GROWTH,Total Capital Sequential Growth,True
+F0505,22651,BPS_SEQUENTIAL_GROWTH,Book Value per Share Sequential Growth,True
+F0506,22652,CFO_SEQUENTIAL_GROWTH,Cash From Operations Sequential Growth,True
+F0507,22653,CAPEX_SEQUENTIAL_GROWTH,Capital Expenditures Sequential Growth,True
+F0508,22654,NET_CHANGE_IN_CASH_SEQ_GROWTH,Net Change in Cash Sequential Growth,True
+F0509,22655,FREE_CASH_FLOW_SEQUENTIAL_GROWTH,Free Cash Flow Sequential Growth,True
+F0510,22656,CF_TO_FIRM_SEQUENTIAL_GROWTH,Cash Flow to Firm Sequential Growth,True
+F0511,22657,FCF_TO_FIRM_SEQUENTIAL_GROWTH,Free Cash Flow to Firm Sequential Growth,True
+F0512,22658,DIVIDEND_PER_SHARE_1_YEAR_GROWTH,Dividend per Share 1 Year Growth,True
+F0514,22660,T12M_FCF_TO_FIRM_YIELD,Trailing 12 Month Free Cash Flow to Firm Yield,True
+F0515,22661,MODIFIED_WORKING_CPTL_SEQ_GRWTH,Modified Working Capital Sequential Growth,True
+F0849,22982,CAPITAL_YIELD,Capital Yield,True
+F1096,23219,BASIC_EPS_EX_STK_BASED_COMP,Basic EPS Excluding Stock Based Compensation,True
+F1097,23220,DILUTED_EPS_EX_STK_BASED_COMP,Diluted EPS Excluding Stock Based Compensation,True
+F1126,23247,OTHER_NONOP_INCOME_LOSS,Other Non-Operating (Income) Loss,True
+F1132,23253,NONOP_INCOME_LOSS,Non-Operating (Income) Loss,True
+F1133,23254,NI_INCLUDING_MINORITY_INT_RATIO,Net Income Including Minority Interest,True
+F1160,23280,INCOME_LOSS_FROM_AFFILIATES,(Income) Loss from Affiliates,True
+F1161,23281,ADJ_EPS_EX_SBC_AMORT_TOT_INT_BAS,Adjusted EPS Ex SBC Amort Tot Intangibles Basic,True
+F1162,23282,ADJ_EPS_EX_SBC_AMORT_TOT_INT_DIL,Adjusted EPS Ex SBC Amort Tot Intangibles Diluted,True
+F1163,23283,ADJ_EPS_EX_AMORT_TOT_INTANG_BAS,Adjusted EPS Ex Amort Tot Intangibles Basic,True
+F1164,23284,ADJ_EPS_EX_AMORT_TOT_INTANG_DIL,Adjusted EPS Ex Amort Tot Intangibles Diluted,True
+F1200,23318,C&CE_AND_STI_DETAILED,"Cash, Cash Equivalents & STI",True
+F1201,23319,OTHER_CURRENT_ASSETS_DETAILED,Other Short Term Assets,True
+F1202,23320,OTHER_INTANGIBLE_ASSETS_DETAILED,Other Intangible Assets,True
+F1203,23321,OTHER_NONCURRENT_ASSETS_DETAILED,Other Noncurrent Assets,True
+F1204,23322,ACCT_PAYABLE_&_ACCRUALS_DETAILED,Accounts Payable and Accruals,True
+F1205,23323,SHORT_TERM_DEBT_DETAILED,Short Term Borrowings,True
+F1206,23324,OTHER_CURRENT_LIABS_SUB_DETAILED,Other Short Term Liabilities,True
+F1207,23325,OTHER_CURRENT_LIABS_DETAILED,Other Current Liabilities,True
+F1208,23326,LONG_TERM_BORROWINGS_DETAILED,Long Term Borrowings,True
+F1209,23327,OTHER_NONCUR_LIABS_SUB_DETAILED,Other Long Term Liabilities,True
+F1210,23328,OTHER_NONCURRENT_LIABS_DETAILED,Other Noncurrent Liabilities,True
+F1211,23329,EQTY_BEF_MINORITY_INT_DETAILED,Equity Before Minority Interest,True
+F1212,23330,NON_CASH_ITEMS_DETAILED,Non - Cash Items,True
+F1213,23331,OTHER_NON_CASH_ADJ_LESS_DETAILED,Other Non - Cash Adjusted,True
+F1214,23332,INC_DEC_IN_OT_OP_AST_LIAB_DETAIL,Change in Other Operating Assets Liabilities,True
+F1215,23333,CHG_IN_FXD_&_INTANG_AST_DETAILED,Change in Fixed and Intangible Assets,True
+F1216,23334,DISP_FXD_&_INTANGIBLES_DETAILED,Disposal of Fixed and Intangibles,True
+F1217,23335,ACQUIS_FXD_&_INTANG_DETAILED,Acquisition of Fixed and Intangibles,True
+F1218,23336,NET_CHG_IN_LT_INVEST_DETAILED,Net Change in Long Term Investments,True
+F1219,23337,OTHER_INVESTING_ACT_DETAILED,Other Investing Activities,True
+F1220,23338,PROC_FR_REPAYMNTS_BOR_DETAILED,Proceeds from Repayments of Borrowings,True
+F1221,23339,PROC_FR_REPURCH_EQTY_DETAILED,Proceeds from Repurchase of Equity,True
+F1222,23340,CFF_ACTIVITIES_DETAILED,Cashflow from Financing Activities,True
+F1233,23349,OTHER_OPERATING_EXPENSES_RATIO,Other Operating Expense,True
+F1269,23383,ADJUSTED_D&A_EXPENSES,Adjusted Depreciation and Amortization Expenses,True
+F1312,23421,T12_EBIT_TO_REVENUE,Trailing 12 Month EBIT to Revenue,True
+F1359,23466,OTHER_EQUITY_RATIO,Other Equity Ratio,True
+F1445,23495,COST_CAPITALIZED_OPERATING_LEAS,Cost of Capitalized Operating Leases,True
+F1462,23512,EBITDA_AFTER_OPERATING_LEA_EXPN,EBITDA After Operating Lease Expenses,True
+F1463,23513,EV_EX_OPERATING_LEASE_LIABS,EV Excluding Operating Lease Liabilities,True
+F1464,23514,EV_TO_EBITDA_EX_OPERATING_LEASE,EV to EBITDA Excluding Operating Lease,True
+F1465,23515,TOT_DEBT_TO_EV_EX_OPER_LEA_LIABS,Total Debt to EV Excluding Operating Lease Liabs,True
+F1466,23516,TOT_DEBT_EX_OPERATING_LEA_LIABS,Total Debt Excluding Operating Lease Liabilities,True
+F1467,23517,T12M_EBITDA_AFTER_OPER_LEA_EXPN,T12M EBITDA After Operating Lease Expn,True
+F1468,23518,IFRS_16_ASC_842_ADOPTION_IND,IFRS 16 ASC 842 Adoption and Disclosure Indicator,True
+F1469,23519,EV_EX_OPER_LEA_LIABS_TO_SALES,EV Excluding Operating Lease Liabilities to Sales,True
+F1470,23520,EBIT_AFTER_OPERATING_LEASE,EBIT After Operating Lease,True
+F1471,23521,T12_EBIT_AFT_OPER_LEASE_EXPN,T12 EBIT After Operating Lease Expenses,True
+F1472,23522,EV_EX_OP_LEA_LIABS_TO_CF_TO_FIRM,EV Excluding Operating Lease Liabs to CF to Firm,True
+F1473,23523,EV_EX_OP_LEA_LIAB_TO_FCF_TO_FIRM,EV Excluding Operating Lease Liabs to FCF to Firm,True
+F1474,23524,T12_CF_TO_FIRM_AFT_OP_LEA_PYMTS,T12 CF to Firm After Operating Lease Payments,True
+F1476,23526,T12_FCF_TO_FIRM_AFT_OP_LEA_PYMTS,T12 FCF to Firm After Operating Lease Payments,True
+F1477,23527,NET_DBT_EX_OPER_LEA_LIABS_EQTY,Net Debt Excluding Operating Lease Liabs to Eqty,True
+F1478,23528,NET_DBT_CPTL_EX_OPER_LEA_LIABS,Net Debt to Capital Ex Operating Lease Liabs,True
+F1479,23529,ST_DEBT_EX_OPERATING_LEASE_LIABS,ST Debt Excluding Operating Lease Liabilities,True
+F1480,23530,LT_DEBT_EX_OPERATING_LEASE_LIABS,LT Debt Excluding Operating Lease Liabilities,True
+F1482,23532,NET_DEBT_EBITDA_EX_OPER_LEA_ACT,Net Debt to EBITDA Ex Operating Lease Activities,True
+F1483,23533,TOT_DEBT_TO_EBIT_EX_OPER_LEA_ACT,Total Debt to EBIT Ex Operating Lease Activities,True
+F1484,23534,NET_DEBT_TO_EBIT_EX_OPER_LEA_ACT,Net Debt to EBIT Ex Operating Lease Activities,True
+F1485,23535,EBITDA_AFT_OP_LEA_EXP_TO_INT_EXP,EBITDA After Operating Lease Expn to Interest Expn,True
+F1486,23536,EBIT_AFT_OP_LEA_EXPN_TO_INT_EXPN,EBIT After Operating Lease Expn to Interest Expn,True
+F1487,23537,EBITDA_AFT_CAPEX_OP_LEA_EX_INT,EBITDA After CAPEX and Oper Lea Expn to Int Expn,True
+F1488,23538,EBITDA_OP_LEA_EX_CSH_INT_PD,EBITDA After Operating Lease Expn To Cash Int Paid,True
+F1489,23539,EBITDA_CAPEX_OP_LEA_EX_TO,EBITDA Aft Capex and Oper Lea Expn to Cash Int Pd,True
+F1490,23540,EBIT_AFT_OP_LEA_EX_TO_CSH_INT_PD,EBIT After Operating Lease Expn to Cash Int Paid,True
+F1491,23541,INT_EXPN_AFTER_OPERATING_LEA_ACT,Interest Expenses Excl Operating Lease Activities,True
+F1493,23543,CE_TO_TOT_AST_LESS_OPER_LEA_AST,CE to Total Assets Less Operating Lease Assets,True
+F1494,23544,LT_DBT_EX_OPER_LEA_LIABS_TO_EQTY,LT Debt Excluding Operating Lease Liabs to Eqty,True
+F1495,23545,LT_DBT_TO_CPTL_EX_OPER_LEA_LIABS,LT Debt to Capital Excluding Operating Lease Liabs,True
+F1496,23546,LT_DBT_AST_EX_OP_LEA_LIAB_AST,LT Debt to Tot Assets Ex Oper Lea Liabs Assets,True
+F1497,23547,TOT_CPTL_EX_OPERATING_LEA_LIABS,Total Capital Excluding Operating Lease Liabs,True
+F1498,23548,TOT_DBT_EX_OP_LEA_LIABS_TO_EQTY,Total Debt Excluding Operating Lease Liabs to Eqty,True
+F1499,23549,TOT_DBT_TO_CPTL_EX_OP_LEA_LIABS,Total Debt to Capital Ex Operating Lease Liabs,True
+F1501,23550,TOT_DBT_AST_EX_OP_LEA_LIAB_AST,Tot Debt to Tot Assets Ex Oper Lea Liabs Assets,True
+F1507,23556,EV_TO_EBIT_EX_OPERATING_LEASE,Enterprise Value to EBIT Excluding Operating Lease,True
+F1508,23557,TOT_DBT_TO_EBITDA_EX_OP_LEA_ACT,Total Debt to EBITDA Ex Operating Lease Activities,True
+F1509,23558,EV_EX_OP_LEA_LIAB_TO_SHS_OUTSTDG,EV Ex Operating Lease Liabs to Shares Outstdg,True
+F1510,23559,CASH_INT_PAID_EX_OPERATING_LEASE,Cash Interest Paid Excluding Operating Lease,True
+F1511,23560,EBITDA_AFT_CAPEX_AND_OP_LEA_EXPN,EBITDA After CAPEX and Operating Lease Expenses,True
+F1529,23574,ST_CAPITALIZED_LEASE_LIABILITIES,Short Term Capitalized Lease Liabilities,True
+F1530,23575,LT_CAPITALIZED_LEASE_LIABILITIES,Long Term Capitalized Lease Liabilities,True
+F1571,23598,DILUTED_EV_EX_OPERATING_LEASE,Diluted Enterprise Value Excluding Operating Lease,True
+IM008,31944,IS_OPEX_R&D,R&D Expense Adjusted,True
+IM091,32024,IS_XO_ITEMS_&_ACCTG_CHNG_DIL_SH,Xo Items & Accounting Changes - Diluted Share,True
+IM092,32025,IS_COMP_GROSS_MARGIN_PERCENTAGE,Comp Gross Margin Percentage,True
+IM096,32029,IS_NET_ABNORMAL_ITEMS,Net Abnormal Losses (Gains),True
+IM122,32053,IS_SG&A_EXPENSE,"Selling, General and Administrative Expense",True
+IM125,32055,IS_CURRENT_INCOME_TAX_BENEFIT,Current Income Tax,True
+IM126,32056,IS_DEFERRED_INCOME_TAX_BENEFIT,Deferred Income Tax,True
+IM128,32058,IS_EXTRAORD_ITEMS_&_ACCTG_CHNG,Extraordinary Items and Accounting Changes,True
+IM131,32061,IS_COMPARABLE_EBITDA,Comparable EBITDA,True
+IM132,32062,IS_COMPARABLE_EBIT,Comparable EBIT,True
+IM162,32090,IS_DISC_OPS_DILUTED_SH,Discontinued Operations - Diluted Share,True
+IM186,32107,IS_MERGER_ACQUISITION_EXPENSE,Merger / Acquisition Expense,True
+IM188,32109,IS_IMPAIR_OF_INTANG_ASSETS,Impairment of Intangible Assets,True
+IM189,32110,IS_SALE_OF_BUSINESS,Gain/Loss on Sale/Acquisition of Business,True
+IM190,32111,IS_LEGAL_LITIGATION_SETTLEMENT,Legal  Settlement,True
+IM191,32112,IS_RESTRUCTURING_EXPENSES,Restructuring Expenses,True
+IM193,32113,IS_UNREALIZED_INVESTMENTS,Unrealized Investments,True
+IM195,32115,IS_OTHER_ONE_TIME_ITEMS,Other Abnormal Items,True
+IM197,32117,IS_DISCONTINUED_OPERATIONS,Discontinued Operations,True
+IM242,32120,IS_TAX_VALN_ALLOWNCE_CREDITS,Tax Valuation Allowance / Credits,True
+IM309,32173,IS_MA_EXPENSE_AFTER_TAX,Merger/Acquisition Expense (After Tax),True
+IM311,32175,IS_DISPOSAL_ASSETS_AFTER_TAX,Disposal of Assets (After Tax),True
+IM313,32177,IS_WRTOFF_IMPAIR_ASSET_AFTER_TAX,Write-Off/Impairment of Assets (After Tax),True
+IM314,32178,IS_IMPAIRMENT_GOODWILL_AFTER_TAX,Impairment of Goodwill (After Tax),True
+IM315,32179,IS_IIA_AFTER_TAX,Impairment of Intangible Assets (After Tax),True
+IM317,32180,IS_SALE_OF_BUSINESS_AFTER_TAX,Gain/Loss on Sale/Acquis of Bus (After-tax),True
+IM318,32181,IS_LEGAL_LITIG_SETTLE_AFTER_TAX,Legal/Litigation/Settlement (After Tax),True
+IM319,32182,IS_RESTRUCTURING_CHRG_AFTER_TAX,Restructuring Charges (After Tax),True
+IM320,32183,IS_SALE_OF_INVESTMENTS_AFTER_TAX,Sale of Investments (After Tax),True
+IM321,32184,IS_UNREALIZED_INVEST_AFT_TAX,Unrealized Investments (After Tax),True
+IM323,32186,IS_OTH_ONE_TIME_ITEMS_AFTER_TAX,Other One Time Items (After Tax),True
+IM346,32206,IS_MERGER_ACQUIS_EXPN_DILUTED_SH,Merger/Acquisition Expense - Diluted Share,True
+IM348,32208,IS_DISPOSAL_ASSETS_DILUTED_SHARE,Disposal of Assets - Diluted Share,True
+IM350,32210,IS_WRTOFF_IMPAIR_AST_DILUTED_SH,Write-Off/Impairment of Assets - Diluted Share,True
+IM351,32211,IS_IMPAIR_GOODWILL_DILUTED_SH,Impairment of Goodwill - Diluted Share,True
+IM352,32212,IS_IIA_DILUTED_SHARE,Impairment of Intangible Assets - Diluted Share,True
+IM354,32213,IS_SALE_OF_BUSINESS_DILUTED_SH,Gain/Loss on Sale/Acquis of Bus (Per Diluted Shr),True
+IM355,32214,IS_LEGAL_LITIG_SETTLE_DILUTED_SH,Legal/Litigation/Settlement - Diluted Share,True
+IM356,32215,IS_RESTRUCTURING_CHRG_DILUTED_SH,Restructuring Charges - Diluted Share,True
+IM357,32216,IS_SALE_INVESTMENTS_DILUTED_SH,Sale of Investments - Diluted Share,True
+IM358,32217,IS_UNREALIZED_INVEST_DILUTED_SH,Unrealized Investments - Diluted Share,True
+IM360,32219,IS_OTH_ONE_TIME_ITEMS_DILUTED_SH,Other One Time Items - Diluted Share,True
+IM361,32220,IS_REVENUE_ADJUSTMENTS,Revenue Adjustments,True
+IM362,32221,IS_COST_OF_REVENUE_ADJUSTMENTS,Cost of Revenue Adjustments,True
+IM363,32222,IS_OTHER_OPER_INC_NONGAAP_ADJUST,Other Operating Income NonGAAP Adjustments,True
+IM364,32223,IS_SG&A_ADJUSTMENTS,Selling General and Administrative Adjustments,True
+IM365,32224,IS_R&D_EXPENSE_NONGAAP_ADJUST,R&D Expense NonGAAP Adjustments,True
+IM366,32225,IS_D&A_NONGAAP_ADJUSTMENTS,Depreciation & Amortization NonGAAP Adjustments,True
+IM367,32226,IS_PDA_NONGAAP_ADJUSTMENTS,Provision for Doubtful Accounts NonGAAP Adjust,True
+IM368,32227,IS_OTHER_OPERATING_EXPN_ADJUST,Other Operating Expenses Adjustments,True
+IM379,32232,IS_AMORT_OF_TOT_INTANG_PRETX,Amortization of Total Intangibles Pre-Tax,True
+IM380,32233,IS_AMORT_OF_TOT_INTANG_P_BAS_SH,Amortization of Tot Intangibles per Basic Share,True
+IM381,32234,IS_AMORT_OF_TOT_INTANG_AFT_TAX,Amortization of Total Intangibles After Tax,True
+IM382,32235,IS_AMORT_OF_TOT_INTANG_P_DIL_SH,Amort of Tot Intangibles per Diluted Share,True
+IM383,32236,IS_COMP_PTP_EX_STK_BASED_COMP,Comparable PTP Excluding Stock Based Compensation,True
+IM406,32245,IS_STK_BASED_COMP_PER_BAS_SH,Stock Based Compensation per Basic Share,True
+IM408,32247,IS_STK_BASED_COMP_PER_DIL_SH,Stock Based Compensation per Diluted Share,True
+IM417,32251,IS_STK_BASED_COMP_AFT_TAX,Stock Based Compensation After Tax,True
+IM420,32253,IS_SALES_AND_SERVICES_REVENUES,Sales and Services Revenues,True
+IM422,32255,IS_OTHER_REVENUE,Other Revenue,True
+IM424,32256,IS_COG_AND_SERVICES_SOLD,Cost of Goods & Services Sold,True
+IM433,32261,IS_DEPRECIATION_AND_AMORTIZATION,Depreciation and Amortization - Operating Expense,True
+IM435,32262,IS_OTHER_OPERATING_EXPENSES,Other Operating Expenses,True
+IM437,32263,IS_NONOP_INCOME_LOSS,Non-Operating (Income) Loss,True
+IM440,32264,IS_OTHER_NON_OPERATING_INC_LOSS,Other Non-Operating (Income) Loss,True
+IM441,32265,IS_OPERATING_EXPENSES_R&D,Operating Expenses R&D,True
+IM515,32322,IS_MERGER_&_ACQUIS_EXPN_OP,Merger and Acquisition Expense - Operating,True
+IM517,32324,IS_GAIN_LOSS_ON_DISP_OF_AST_OP,(Gain)/Loss on Disposal of Assets - Operating,True
+IM519,32326,IS_WRTDWN_IOA_OP,Write-Down/Impairment of Assets - Operating,True
+IM520,32327,IS_IMPAIRMENT_OF_GOODWILL_OP,Impairment of Goodwill - Operating,True
+IM521,32328,IS_IIA_OP,Impairment of Intangible Assets - Operating,True
+IM522,32329,IS_GAIN_LOSS_ON_SALE_ACQ_BUSN_OP,(Gain)/Loss on Sale or Acquis of Busn - Operating,True
+IM523,32330,IS_LEGAL_LIT_SETTLE_EXPN_OP,Legal/Litigation/Settlement Expense - Operating,True
+IM524,32331,IS_RESTRUCTURING_OP,Restructuring - Operating,True
+IM525,32332,IS_GAIN_LOSS_SALE_OF_INVEST_OP,(Gain)/Loss on Sale of Investments - Operating,True
+IM526,32333,IS_UNRLZD_GAIN_LOSS_ON_SECS_OP,Unrealized (Gain)/Loss on Securities - Operating,True
+IM528,32335,IS_OTHER_ONE_TIME_ITEMS_OP,Other One-Time Items - Operating,True
+IM811,32462,IS_OTHER_INVESTMENT_INCOME_LOSS,Other Investment Income Loss,True
+IS010,34423,SALES_REV_TURN,Revenue,True
+IS011,34424,IS_INT_INC,Interest Income,True
+IS021,34434,IS_COGS_TO_FE_AND_PP_AND_G,Cost of Revenue,True
+IS032,34445,IS_OPERATING_EXPN,Operating Expenses,True
+IS033,34446,IS_OPER_INC,Operating Income or Losses,True
+IS034,34447,IS_INT_EXPENSE,Interest Expense,True
+IS036,34449,IS_FOREIGN_EXCH_LOSS,Foreign Exch Losses (Gains),True
+IS038,34451,IS_INC_TAX_EXP,Income Tax Expense (Benefit),True
+IS040,34453,IS_INC_BEF_XO_ITEM,Income (Loss) from Continuing Operations,True
+IS043,34456,MIN_NONCONTROL_INTEREST_CREDITS,Minority/Non Controlling Interests (Credits),True
+IS050,34463,NET_INCOME,Net Income/Net Profit (Losses),True
+IS051,34464,IS_TOT_CASH_PFD_DVD,Preferred Dividends,True
+IS052,34465,IS_TOT_CASH_COM_DVD,Total Cash Common Dividends,True
+IS060,34473,IS_AVG_NUM_SH_FOR_EPS,Basic Weighted Average Number of Shares,True
+IS061,34474,IS_EPS,Basic Earnings per Share,True
+IS062,34475,IS_SH_FOR_DILUTED_EPS,Diluted Weighted Average Shares,True
+IS063,34476,IS_DILUTED_EPS,Diluted EPS,True
+IS064,34477,IS_EARN_BEF_XO_ITEMS_PER_SH,Basic EPS from Continuing Operations,True
+IS069,34482,IS_PERSONNEL_EXP,Personnel Expenses,True
+IS070,34483,IS_DEPR_EXP,Depreciation Expenses,True
+IS075,34488,IS_CAP_INT_EXP,Capitalized Interest Expense,True
+IS095,34506,IS_ABNORMAL_ITEM,Abnormal Losses (Gains),True
+IS097,34508,IS_BASIC_EPS_CONT_OPS,Basic EPS from Continuing Operations - Adjusted,True
+IS099,34510,IS_OTHER_OPER_INC,Other Operating Income,True
+IS131,34542,CUR_PROFIT_JAPAN,Current Profit,True
+IS147,34550,IS_DIL_EPS_CONT_OPS,Diluted EPS from Continuing Operations - Adjusted,True
+IS148,34551,IS_DIL_EPS_BEF_XO,Diluted EPS Before Extraordinary Items,True
+IS168,34561,OTHER_ADJUSTMENTS,Other Adjustments,True
+IS173,34564,IS_IMPAIRMENT_GOODWILL_INTANGIBL,Impairment of Goodwill,True
+IS189,34580,IS_PROVISION_DOUBTFUL_ACCOUNTS,Provision for Doubtful Accounts,True
+IS323,34700,IS_EXPENSE_STOCK_BASED_COMP,Expense For Stock-Based Compensation,True
+IS325,34702,IS_NET_INTEREST_EXPENSE,Net Interest Expense,True
+IS666,34995,IS_GAIN_LOSS_ON_INVESTMENTS,Gain/Loss on Investments,True
+IS667,34996,IS_GAIN_LOSS_DISPOSAL_ASSETS,(Gain)/Loss on Disposal of Assets,True
+IS900,35178,IS_COMP_EPS_ADJUSTED,Estimate Comparable EPS Adjusted,True
+IS902,35180,IS_COMP_SALES,Estimate Comparable Sales,True
+IS903,35181,IS_COMP_NET_INCOME_ADJUST,Estimate Comparable Net Income Adjusted,True
+IS975,35242,IS_IMPAIRMENT_ASSETS,Asset Write-Down,True
+PR005,40928,PX_LAST,Last Price,True
+PR006,40929,PX_OPEN,Open Price,True
+PR007,40930,PX_HIGH,High Price,True
+PR008,40931,PX_LOW,Low Price,True
+R0003,42665,ARDR_COST_OF_GOODS_SOLD,ARD Ref Cost of Goods Sold,True
+R0006,42667,ARDR_R&D_EXPENDITURES,ARD Ref R & D Expenditures,True
+R0010,42671,ARDR_SELLING_GENERAL_ADMIN_EXP,ARD Ref Selling General and Administrative Expense,True
+R0011,42672,ARDR_PROV_FOR_DOUBTFUL_ACCTS,ARD Ref Provision For Doubtful Accounts,True
+R0012,42673,ARDR_DEPRECIATION_AMORTIZATION,ARD Ref Depreciation and Amortization,True
+R0013,42674,ARDR_OTHER_OPERATING_EXPENSES,ARD Ref Other Operating Expenses,True
+R0015,42676,ARDR_FOREIGN_EXCHANGE,ARD Ref Foreign Exchange,True
+R0017,42678,ARDR_GL_ON_SALE_OF_ASSETS,ARD Ref (Gain)/Loss On Sale of Assets,True
+R0019,42680,ARDR_WRITEDOWN_IMPAIR_OF_ASSETS,ARD Ref Write-Down/Impairment of Assets,True
+R0020,42681,ARDR_RESTRUCTURING_CHARGES,ARD Ref Restructuring Charges,True
+R0021,42682,ARDR_OTHER_ONE_TIME_CHARGES,ARD Ref Other One-Time Charges,True
+R0023,42684,ARDR_INT_INCOME,ARD Ref Interest Income,True
+R0029,42689,ARDR_INCOME_TAX_EXP_BENEFIT,ARD Ref Income Tax Expense (Benefit),True
+R0045,42704,ARDR_CASH_AND_EQUIVALENTS,ARD Ref Cash and Equivalents,True
+R0047,42706,ARDR_ACCTS_RECEIVABLE_TRADE,ARD Ref Accounts Receivable - Trade,True
+R0048,42707,ARDR_INVENTORY,ARD Ref Inventories,True
+R0051,42710,ARDR_RESTRICTED_CASH_ST,ARD Ref Restricted Cash (ST),True
+R0062,42719,ARDR_BUILDING,ARD Ref Buildings,True
+R0065,42722,ARDR_CONSTRUCTION_IN_PROGRESS,ARD Ref Construction In Progress,True
+R0066,42723,ARDR_FURNITURE_MACHINERY_EQUIP,ARD Ref Furniture/Machinery/Equipment,True
+R0067,42724,ARDR_PROPERTY_PLANT_EQUIP_GROSS,ARD Ref Property Plant & Equipment - Gross,True
+R0068,42725,ARDR_ACCUMULATED_DEPREC,ARD Ref Accumulated Depreciation,True
+R0069,42726,ARDR_PROPERTY_PLANT_EQUIP_NET,ARD Ref Property Plant & Equipment - Net,True
+R0071,42728,ARDR_TOTAL_INTANGIBLE_ASSET_NET,ARD Ref Total Intangible Assets - Net,True
+R0075,42732,ARDR_GOODWLL,ARD Ref Goodwill,True
+R0076,42733,ARDR_PATENTS_TRADEMRK_COPYRIGHT,ARD Ref Patents/Trademarks/Copyrights,True
+R0079,42736,ARDR_OTHER_NONCURRENT_ASSET,ARD Ref Other Noncurrent Assets,True
+R0080,42737,ARDR_ACCOUNTS_PAYABLE_TRADE,ARD Ref Accounts Payable - Trade,True
+R0084,42741,ARDR_ST_CAP_LEASE_OBLIGATIONS,ARD Ref Short-Term Capital Lease Obligations,True
+R0087,42744,ARDR_ST_BORROW,ARD Ref Short-Term Borrowings,True
+R0089,42746,ARDR_ACCRUED_EXPENSES,ARD Ref Accrued Expenses,True
+R0091,42748,ARDR_DEFERRED_UNEARNED_REV_ST,ARD Ref Deferred/Unearned Revenue (ST),True
+R0092,42749,ARDR_INTEREST_ACCRUED_PAYABLE,ARD Ref Interest Accrued/Payable,True
+R0096,42753,ARDR_LT_CAP_LEASE_OBLIGATIONS,ARD Ref Long Term Capital Lease Obligations,True
+R0098,42755,ARDR_LT_DEBT,ARD Ref Long Term Debt,True
+R0103,42757,ARDR_DEFERRED_UNEARNED_REV_LT,ARD Ref Deferred/Unearned Revenue (LT),True
+R0106,42759,ARDR_OTH_NONCURRENT_LIABILITIES,ARD Ref Other Noncurrent Liabilities,True
+R0108,42761,ARDR_MIN_NONCONTROL_INT_SE,ARD Ref Min/Non Cntrlling Int(Stckhldrs Eqty),True
+R0111,42764,ARDR_TREASURY_STOCK_AMOUNT,ARD Ref Treasury Stock (Amount),True
+R0114,42767,ARDR_RETAINED_EARN_ACC_DEFICIT,ARD Ref Retained Earnings (Accumulated Deficit),True
+R0116,42769,ARDR_SHARES_OUTSTANDING,ARD Ref Shares Outstanding,True
+R0118,42771,ARDR_TREASURY_SHARES_NUM,ARD Ref Treasury Shares (Number),True
+R0191,42825,ARDR_WORK_IN_PROGRESS,ARD Ref Work In Progress,True
+R0192,42826,ARDR_FINISHED_GOOD,ARD Ref Finished Goods,True
+R0193,42827,ARDR_CAPITALIZED_INTEREST,ARD Ref Capitalized Interest,True
+R0203,42831,ARDR_OTHER_REV,ARD Ref Other Revenue,True
+R0213,42839,ARDR_OTHER_OPERATING_INC,ARD Ref Other Operating Income,True
+R0270,42860,ARDR_OTHER_INVENTORY,ARD Ref Other Inventory,True
+R0274,42864,ARDR_FUT_MIN_OPER_LEASE_OBLIG,ARD Ref Future Minimum Operating Lease Obligations,True
+R0303,42869,ARDR_WEIGHTED_AVG_SHARES_BASIC,ARD Ref Weighted Avg. Shares - Basic,True
+R0306,42872,ARDR_WEIGHTED_AVG_SHARE_DILUTED,ARD Ref Weighted Avg. Shares - Diluted,True
+R0322,42888,ARDR_RENTAL_EXP_YR1,ARD Ref Rental Expense - Year 1,True
+R0327,42893,ARDR_RENTAL_EXP_BEYOND_YR5,ARD Ref Rental Expense - Beyond Year 5,True
+R0332,42897,ARDR_DEFERRED_TAX_LIAB_LT,ARD Ref Deferred Tax Liabilities (LT),True
+R0333,42898,ARDR_DEFERRED_TAX_ASSETS_LT,ARD Ref Deferred Tax Assets (LT),True
+R0496,42907,ARDR_ALLOW_FOR_DOUBTFUL_ACCTS,ARD Ref Allowance For Doubtful Accounts,True
+R0512,42916,ARDR_TOTAL_SHAREHOLDERS_EQUITY,ARD Ref Total Shareholders Equity,True
+R0518,42922,ARDR_TOTAL_CAPITAL_LEASES,ARD Ref Total Capital Leases,True
+R0520,42924,ARDR_LITIGATION_EXP,ARD Ref Litigation Expense,True
+R0521,42925,ARDR_MERGER_ACQUISITION_EXPENSE,ARD Ref Merger/Acquisition Expense,True
+R0615,42951,ARDR_DIVIDEND_INCOME,ARD Ref Dividend Income,True
+R0626,42962,ARDR_RENTAL_INC,ARD Ref Rental Income,True
+R0628,42964,ARDR_INTEREST_EXP_BORROW,ARD Ref Interest Expense - Borrowings,True
+R0630,42966,ARDR_INTEREST_EXPENSE_OTHER,ARD Ref Interest Expense - Other,True
+R0690,43018,ARDR_DERIVATIVE_ASSET_ST,ARD Ref Derivative Assets Short-Term,True
+R0839,43098,ARDR_IMPAIRMENT_OF_INTANGIBLES,ARD Ref Impairment of Intangibles,True
+R0860,43111,ARDR_UNSECURED_DEBT,ARD Ref Unsecured Debt,True
+R0915,43133,ARDR_AMORT_OF_INTANGIBLE_ASSETS,ARD Ref Amortization of Intangible Assets,True
+R0925,43136,ARDR_INTEREST_RECEIVABLES,ARD Ref Interest Receivables,True
+R0959,43157,ARDR_BOND_INTERESTS,ARD Ref Bond Interests,True
+R0985,43176,ARDR_CASH_AND_DUE_FROM_BANKS,ARD Ref Cash and Due From Banks,True
+R1011,43184,ARDR_TOTAL_REVENUES,ARD Ref Total Revenue,True
+R1019,43188,ARDR_IMPAIRMENT_OF_GOODWILL,ARD Ref Impairment of Goodwill,True
+R1029,43194,ARDR_CUSTOMER_DEPOSIT_ADV_ST,ARD Ref Customer Deposits/Advances (ST),True
+R1041,43201,ARDR_PRODUCT_REVENUE,ARD Ref Product Revenue,True
+R1042,43202,ARDR_SERVICE_REVENUE,ARD Ref Service Revenue,True
+R1052,43208,ARDR_PENSION_POSTRETIRE_BEN_EXP,ARD Ref Pension/Postretirement Benefits Expense,True
+R1054,43210,ARDR_GL_ON_SALE_OF_BUSINESS,ARD Ref (Gain)/Loss On Sale of Business,True
+R1057,43212,ARDR_CUR_INCOME_TAX_EXP_BENEFIT,ARD Ref Current Income Tax Expense (Benefit),True
+R1058,43213,ARDR_DEFERRED_INC_TAX_EXP_BEN,ARD Ref Deferred Income Tax Expense (Benefit),True
+R1063,43217,ARDR_OTHER_RECEIVABLES_ST,ARD Ref Other Receivables (ST),True
+R1067,43221,ARDR_PREPAID_EXPENSES_LT,ARD Ref Prepaid Expenses (LT),True
+R1244,43350,ARDR_DERIVATIVE_ASSET_LT,ARD Ref Derivative Assets (Long-Term),True
+R1276,43368,ARDR_DUE_TO_AFFILIATES,ARD Ref Due To Affiliates,True
+R1965,43448,ARDR_NUM_CNSL_SUBSIDIARIES,ARD Ref Number of Consolidated Subsidiaries,True
+R1966,43449,ARDR_NUM_UNCONSOL_SUBSIDIARIES,ARD Ref Number of Unconsolidated Subsidiaries,True
+R2228,43491,ARDR_IMPAIRMENTS_ADJUSTMENTS,ARD Ref Impairments/Adjustments,True
+R2287,43510,ARD_ADJ_NET_INCOME_AS_REPORTED,ARD Ref Adjusted Net Income-As Reported,True
+R2749,43562,ARDR_OTHER_RECEIVABLES_LT,ARD Ref Other Receivables (LT),True
+R2759,43569,ARDR_OTHER_PAYABLES,ARD Ref Other Payables,True
+R2789,43574,ARDR_DERIVATIVE_LIABILITIES_ST,ARD Ref Derivative Liabilities (Short-Term),True
+R2791,43575,ARDR_DERIVATIVE_LIABILITIES_LT,ARD Ref Derivative Liabilities (Long-Term),True
+R2931,43637,ARDR_LICENSES,ARD Ref Licenses,True
+R2933,43638,ARDR_CUSTOMER_LISTS_CONTRACTS,ARD Ref Customer Lists/Contracts,True
+R2971,43640,ARDR_NUM_OF_EMPLOYEES_PERIOD_END,ARD Ref Number of Employees at Period End Date,True
+R2995,43652,ARDR_OTHER_FIXED_ASSETS,ARD Ref Other Fixed Assets,True
+R3001,43656,ARDR_CUM_TRANSLATION_ADJUST,ARD Ref Cumulative Translation Adjustment,True
+R3009,43661,ARDR_ACCTS_REC_OTHER_REC,ARD Ref Accounts Receivable And Other Receivables,True
+R3032,43677,ARDR_ACCCUM_AMORT_INTANG_ASSET,ARD Ref Accumulated Amortization Intangible Assets,True
+R3040,43685,ARDR_BANK_LOANS_NONCURRENT,ARD Ref Bank Loans - Noncurrent,True
+R3046,43689,ARDR_CAPITAL_RSRV,ARD Ref Capital Reserve,True
+R3070,43706,ARDR_TOTAL_CONTIGENT_PAYABLE,ARD Ref Total Contingent Payable,True
+R3131,43758,ARDR_TOT_EXCEPTIONAL_INC_CHARGE,ARD Ref Total Exceptional (Income)/Charges,True
+R3139,43765,ARDR_FINAL_DIVIDEND_PER_SHARE,ARD Ref Final Dividend Per Share,True
+R3151,43774,ARDR_GAIN_FOREIGN_EXCHANGE,ARD Ref Gain On Foreign Exchange,True
+R3181,43795,ARDR_TOTAL_FINANCIAL_LOSSES,ARD Ref Total Financial Costs,True
+R3191,43805,ARDR_INTERIM_DIVIDEND_PER_SHARE,ARD Ref Interim Dividend Per Share,True
+R3205,43819,ARDR_TAXES_ON_JV_ASSOCIATE,ARD Ref Taxes On Joint Venture / Associate,True
+R3212,43824,ARDR_TIME_DEP_MTY_LESS_THAN_3M,ARD Ref Time Deposits -Maturity Less Than 3 Months,True
+R3257,43854,ARDR_NOTES_AND_BONDS_CURRENT,ARD Ref Notes And Bonds - Current,True
+R3266,43860,ARDR_OPTIONS_GRANTED_DURING_PER,ARD Ref Options Granted During Period,True
+R3267,43861,ARDR_OPTIONS_OUTSTANDING_END_PER,ARD Ref Options Outstanding End Period,True
+R3289,43877,ARDR_OTHER_RESERVE,ARD Ref Other Reserve,True
+R3293,43879,ARDR_OTHER_TAXES,ARD Ref Other Taxes,True
+R3320,43897,ARDR_TRADE_RECEIVABLES_GROSS,ARD Ref Trade Receivables-Gross,True
+R3322,43899,ARDR_TOTAL_NUMBER_OF_SHRHLDRS,ARD Ref Total Number Of Shareholders,True
+R3354,43921,ARDR_SHARE_BASED_COMPENSATION,ARD Ref Share-Based Compensation,True
+R3362,43929,ARDR_REVALUATION_SURPLUS,ARD Ref Revaluation Surplus,True
+R3374,43936,ARDR_DIRECTORS_REMUNERATION,ARD Ref Directors Remuneration,True
+R3378,43940,ARDR_TANGIBLE_BV_PER_SHARE,ARD Ref Tangible Book Value Per Share,True
+R3387,43949,ARDR_AMORT_DEFERRED_EXPENDITURES,ARD Ref Amortization Of Deferred Expenditures,True
+R3390,43952,ARDR_AMORT_LEASED_ASSETS,ARD Ref Amortization Of Leased Assets,True
+R3437,43992,ARDR_RECEIVABLES_FROM_ASSOC_CO,ARD Ref Receivables From Associated Companies,True
+R3448,43999,ARDR_DEPR_PLANT_EQUIPMENT,ARD Ref Depreciation Of Plant And Equipment,True
+R3449,44000,ARDR_WTD_AVG_NUM_POTEN_DIL_SH,ARD Ref Weighted Avg NumberPotential Dilutive Shr,True
+R3455,44006,ARDR_FINANCIAL_INCOME,ARD Ref Financial Income,True
+R3478,44026,ARDR_INTERIM_DIVIDEND_PAID,ARD Ref Interim Dividend Paid,True
+R3487,44035,ARDR_RENTAL_EXP,ARD Ref Rental Expense,True
+R3490,44038,ARDR_OTHER_FINANCIAL_LOSSES,ARD Ref Other Financial Losses,True
+R3502,44048,ARDR_PROPOSED_FINAL_DIVIDEND,ARD Ref Proposed Final Dividend,True
+R3511,44056,ARDR_PROV_DOUBTFUL_DEBT_TRD_REC,ARD Ref Provision Doubtful Debt (Trade Receivable),True
+R3533,44074,ARDR_STAFF_CST_EXCL_DIR_EMOLUMNT,ARD Ref Staff Costs - Excluding Dir Emoluments,True
+R3621,44138,ARDR_FIXED_DEPOSITS,ARD Ref Fixed Deposits,True
+R3641,44150,ARDR_AMT_DUE_AFF_CO_NONTRADE,ARD Ref Amts Due -Affiliated Companies -Non-Trade,True
+R3642,44151,ARDR_AMTS_DUE_AFF_CO_TRADE,ARD Ref Amts Due From Affiliated Companies - Trade,True
+R3649,44153,ARDR_PREPAYMENT_ADVANCE,ARD Ref Prepayment/Advance,True
+R3662,44166,ARDR_AVAIL_SALE_SECS_GREATER_1YR,ARD Ref Available For Sale Secs - More Than 1 Year,True
+R3672,44174,ARDR_AMTS_DUE_RELATED_CO_TRADE,ARD Ref Amounts Due To Related Companies - Trade,True
+R3673,44175,ARDR_AMTS_DUE_TO_AFF_CO_NONTRADE,ARD Ref Amounts Due To Affil Companies - Non-Trade,True
+R3691,44185,ARDR_BONDS_PAYABLE,ARD Ref Bonds Payable,True
+R3693,44187,ARDR_PLANT_AND_EQUIPMENT_GROSS,ARD Ref Plant And Equipment - Gross,True
+R3694,44188,ARDR_BUILDING_NET,ARD Ref Buildings - Net,True
+R3696,44189,ARDR_CAP_COMMIT_CNT_NOT_PROVIDED,ARD Ref Capital Commit Contracted Not Provided For,True
+R3701,44194,ARDR_OTHER_COMMITMENTS,ARD Ref Other Commitments,True
+R3705,44196,ARDR_CONSTRUCTION_PROGRESS_NET,ARD Ref Construction In Progress - Net,True
+R3717,44203,ARDR_EMPLOYEE_ENTITLE_NONCUR,ARD Ref Employee Entitlements - Noncurrent,True
+R3732,44213,ARDR_EQY_INVEST_ASSOC_AFFILIATES,ARD Ref Equity Investments Associates/Affiliates,True
+R3734,44214,ARDR_NET_EQTY_INVEST_JV_ASSOC,ARD Ref Net Equity Investments In JV/Assoc,True
+R3739,44218,ARDR_LAND_NET,ARD Ref Land - Net,True
+R3754,44228,ARDR_RECEIVABLES,ARD Ref Receivables,True
+R3765,44237,ARDR_OP_LEASES_EXP_2_TO_5YRS,ARD Ref Operating Leases Expiring Within 2 & 5 Yrs,True
+R3766,44238,ARDR_LOSSES_ON_INVENTORY_VALN,ARDR Losses on Inventory Valuation,True
+R3774,44246,ARDR_PAYABLES_LIABILITIES,ARD Ref Payables (Liabilities),True
+R3785,44254,ARDR_SPECIAL_CASH_DVD_PAID,ARD Ref Special Cash Dividend Paid,True
+R3794,44262,ARDR_ST_PROVISIONS,ARD Ref Short-Term Provisions,True
+R3891,44336,ARDR_TOTAL_SHARE_CAPITAL,ARD Ref Total Share Capital,True
+R3908,44347,ARDR_DUE_TO_BANKS_ST,ARD Ref Due To Banks (ST),True
+R3910,44349,ARDR_OTHER_PROVISIONS_CURRENT,ARD Ref Other Provisions - Current,True
+R3931,44359,ARDR_INT_ELEMENT_FIN_LEASE_PYMTS,ARD Ref Interest Element Of Finance Lease Payments,True
+R3975,44388,ARDR_TOT_SHARE_EQY_EXCL_MINORITY,ARD Ref Total Shareholder Equity Excludes Minority,True
+R4352,44607,ARDR_SECURED_INT_BEARING_LIABS,ARD Ref Secured Interest Bearing Liabilities,True
+R4353,44608,ARDR_INT_BEARING_LIAB_NONCURRENT,ARD Ref Interest Bearing Liabilities (Noncurrent),True
+R4795,44856,ARDR_OPTIONS_EXERCISED_DUR_PER,ARD Ref Options Exercised During the Period,True
+R4882,44877,ARDR_DEPRECIATION_AND_AMORT_LIFE,ARD Ref Depreciation And Amortization (Life),True
+R5052,44952,ARDR_SHARE_CAP_ADDL_PAID_IN_CAP,ARD Ref Share Capital & Additional Paid In Capital,True
+R5070,44968,ARDR_OTHER_FINANCE_INCOME,ARD Ref Other Finance Income,True
+R5130,45016,ARDR_FREEHOLD_LAND_GROSS,ARD Ref Freehold Land - Gross,True
+R5131,45017,ARDR_LEASEHOLD_LAND_GROSS,ARD Ref Leasehold Land - Gross,True
+R5140,45025,ARDR_NET_ASSETS_PER_SHARE,ARD Ref Net Assets Per Share,True
+R5276,45129,ARDR_SPECIAL_DVD_PER_SHARE,ARD Ref Special Dividend Per Share,True
+R5282,45133,ARDR_HEDGING_RESERVE,ARD Ref Hedging Reserve,True
+R5342,45146,ARDR_PURCHASE_OBLIGATIONS,ARD Ref Purchase Obligations,True
+R5806,45369,ARD_REF_EBITDA_IS,ARD Ref  EBITDA - IS,True
+R5903,45390,ARDR_SHRS_OUT_EXCL_TRSY_SHRS,ARD Ref Shares Outstanding Excl Treasury Shares,True
+R8176,45936,ARDR_GAIN_BAD_DEBT_REC_WITHIN,ARD Ref Gain From Bad Debt Rec Within Other Op Inc,True
+R8202,45941,ARDR_STATUTORY_TAX_RATE_PCT,ARD Ref Statutory Tax Rate - %,True
+R9020,46076,ARDR_OTHER_ONE_TIME_CHRG_AFT_TAX,ARDR Other One Time Charge After Tax,True
+R9845,46100,ARDR_FV_ASSETS_REC_TOTAL,ARD Ref Fair Value Assets Recur - Total,True
+R9849,46104,ARDR_FV_LIAB_REC_TOTAL,ARD Ref Fair Value Liab Recur - Total,True
+R9936,46133,ARDR_OPTIONS_CANCELLED_FORFEITED,ARDR Options Cancelled or Forfeited,True
+R9990,46143,ARDR_GOODWILL_IMPAIRMENT_AFT_TAX,ARDR Goodwill Impairment After Tax,True
+RR001,49103,PRETAX_INC,Pre-Tax Income,True
+RR002,49104,EBIT,EBIT,True
+RR005,49107,BS_TOT_LIAB2,Total Liabilities,True
+RR006,49108,BS_TOT_CAP,Total Capital,True
+RR007,49109,TOTAL_EQUITY,Total Equity,True
+RR008,49110,CF_FREE_CASH_FLOW,Free Cash Flow,True
+RR009,49111,EBITDA,EBITDA,True
+RR014,49116,CAPITAL_EXPEND,Capital Expenditures,True
+RR015,49117,BS_TOT_NON_CUR_ASSET,Total Non-Current Assets,True
+RR019,49121,REVENUE_PER_SH,Revenue/Basic Share,True
+RR020,49122,BOOK_VAL_PER_SH,Book Value per Share,True
+RR021,49123,FREE_CASH_FLOW_PER_SH,Free Cash Flow/Basic Shr,True
+RR022,49124,CASH_FLOW_PER_SH,Cash Flow per Share,True
+RR023,49125,OPER_INC_PER_SH,Operating Income per Share,True
+RR025,49127,EQY_DPS,Dividends per Share,True
+RR026,49128,OPER_MARGIN,Operating Margin,True
+RR028,49130,RETURN_ON_ASSET,Return on Assets,True
+RR029,49131,RETURN_COM_EQY,Return on Common Equity,True
+RR030,49132,RETURN_ON_CAP,Return on Capital,True
+RR033,49135,SALES_GROWTH,Revenue Growth Year over Year,True
+RR034,49136,OPER_INC_GROWTH,EBIT Growth Year over Year,True
+RR037,49139,EFF_TAX_RATE,Effective Tax Rate,True
+RR039,49141,ASSET_GROWTH,Assets - 1 Year Growth,True
+RR040,49142,EMPL_GROWTH,Employees - 1 Year Growth,True
+RR041,49143,TOT_DEBT_TO_TOT_ASSET,Total Debt to Total Assets,True
+RR044,49146,COM_EQY_TO_TOT_ASSET,Common Equity to Tot Assets,True
+RR045,49147,TOT_DEBT_TO_TOT_CAP,Total Debts to Total Capital,True
+RR047,49149,LT_DEBT_TO_TOT_CAP,LT Debt to Total Capital,True
+RR049,49151,DVD_PAYOUT_RATIO,Dividend Payout Ratio,True
+RR052,49154,TOT_DEBT_TO_EBITDA,Total Debt to EBITDA,True
+RR053,49155,CUR_RATIO,Current Ratio,True
+RR054,49156,QUICK_RATIO,Quick Ratio,True
+RR055,49157,ACCT_RCV_TURN,Accounts Receivable Turnover,True
+RR056,49158,INVENT_TURN,Inventory Turnover,True
+RR057,49159,GROSS_MARGIN,Gross Margin,True
+RR061,49162,GROWTH_IN_CAP,Capital - 1 Year Growth,True
+RR063,49164,BVPS_GROWTH,BVS - 1 Year Growth,True
+RR065,49166,CASH_FLOW_TO_NET_INC,Cash Flow to Net Income,True
+RR092,49193,INC_BEF_XO_LESS_MIN_INT_PREF_DVD,Inc Bef XO Less Minority Interest & Pref Dvd,True
+RR101,49202,CASH_FLOW_TO_TOT_LIAB,Cashflow to Total Liabilities,True
+RR115,49215,EBITDA_MARGIN,Trailing 12M EBITDA Margin,True
+RR121,49221,NUM_OF_EMPLOYEES,Number of Employees,True
+RR128,49227,EBITDA_GROWTH,EBITDA Growth Year over Year,True
+RR132,49231,CASH_ST_INVESTMENTS_PER_SH,Cash & ST Investments/Share,True
+RR138,49237,ASSET_TURNOVER,Asset Turnover,True
+RR140,49239,FNCL_LVRG,Financial Leverage,True
+RR147,49246,LT_DEBT_TO_TOT_ASSET,LT Debt to Total Assets,True
+RR149,49247,TOT_LIAB_AND_EQY,Total Liabilities and Equity,True
+RR152,49250,NET_DEBT_TO_SHRHLDR_EQTY,Net Debt To Shareholders Equity,True
+RR155,49253,EBITDA_LES_CAP_EXPEND_TO_INT_EXP,EBITDA Minus CAPEX/Interest,True
+RR159,49257,ACCT_RCV_DAYS,Days Sales Outstanding - DSO,True
+RR160,49258,INVENT_DAYS,Inventory Days,True
+RR169,49267,SUSTAIN_GROWTH_RT,Sustainable Growth Rate,True
+RR180,49278,TANG_BOOK_VAL_PER_SH,Tangible Book Value/Share,True
+RR181,49279,CAP_EXPEND_RATIO,Capital Expenditure Ratio,True
+RR192,49290,DILUTED_EPS_AFT_XO_ITEMS_GROWTH,Diluted EPS after XO Items - 1 Yr Growth,True
+RR208,49304,NET_DEBT,Net Debt,True
+RR236,49330,RR_DIL_EPS_CONT_OPS_GROWTH,Diluted EPS Growth Adjusted YoY,True
+RR239,49333,XO_GL_NET_OF_TAX,Net Extraordinary Losses (Gains),True
+RR243,49337,PROF_MARGIN,Profit Margin,True
+RR244,49338,TAX_EFFICIENCY,Tax Efficiency,True
+RR245,49339,INT_BURDEN,Interest Burden,True
+RR250,49344,HISTORICAL_MARKET_CAP,Historical Market Cap,True
+RR251,49345,SHORT_AND_LONG_TERM_DEBT,Short and Long Term Debt,True
+RR253,49347,CASH_AND_MARKETABLE_SECURITIES,Cash and Marketable Securities,True
+RR256,49350,CASH_RATIO,Cash Ratio,True
+RR258,49352,INV_TO_CASH_DAYS,Inventory to Cash - Days,True
+RR265,49359,OPER_INC_TO_INT_EXP,Op Inc to Int Expense,True
+RR285,49379,INC_BEF_XO_ITEMS_TO_NET_SALES,Inc bef XO Items to Net Sales,True
+RR290,49384,PRETAX_INC_TO_NET_SALES,Pre-Tax Income to Net Sales,True
+RR415,49507,WORK_CAP_GROWTH,Working Capital - 1 Yr Growth,True
+RR416,49508,TOT_CAP_EXPEND_GROWTH,Total Capital Expenditures - 1 Yr Growth,True
+RR441,49533,EARN_FOR_COM_GROWTH,Net Income to Common Growth YoY,True
+RR472,49564,ENTERPRISE_VALUE,Periodic Enterprise Value,True
+RR473,49565,EV_TO_T12M_SALES,Periodic EV to Trailing 12M Sales,True
+RR474,49566,EV_TO_T12M_EBITDA,Periodic EV to Trailing 12M EBITDA,True
+RR475,49567,EV_TO_T12M_EBIT,Periodic EV to Trailing 12M EBIT,True
+RR481,49573,TOTAL_DEBT_TO_EV,Periodic Total Debt to EV,True
+RR497,49589,NON_CUR_LIAB,Non Current Liabilities,True
+RR530,49621,EARN_FOR_COMMON,Net Income Available to Common,True
+RR555,49645,EBITDA_PER_SH,EBITDA per Share,True
+RR600,49690,GEO_GROW_NET_SALES,Revenue 5 Year CAGR,True
+RR601,49691,GEO_GROW_OPER_INC,EBIT Growth 5 Year CAGR,True
+RR607,49697,GEO_GROW_TOT_ASSET,Total Assets - 5 Yr Geometric Growth,True
+RR608,49698,GEO_GROW_CASH_OPER_ACT,Cash from Operating Act - 5 Yr Geometric Growth,True
+RR611,49701,GEO_GROW_TOT_SHRHLDR_EQY,Total Shareholder Equity - 5 Yr Geometric Growth,True
+RR613,49703,GEO_GROW_BOOK_VAL,Book Value - 5 Yr Geometric Growth,True
+RR639,49729,GEO_GROW_DVD_PER_SH,Dividend per Share - 5 Yr Geometric Growth,True
+RR671,49759,OTHER_FIN_AND_DEC_CAP,Other Financing And Dec Capital,True
+RR702,49787,DILUTED_MKT_CAP,Diluted Market Cap (Weighted Average Shares),True
+RR710,49794,RETURN_ON_INV_CAPITAL,Return on Invested Capital,True
+RR711,49795,EV_TO_SH_OUT,Periodic EV to Shares Outstanding,True
+RR716,49800,GEO_GROW_DILUTED_EPS_CONT_OPS,Diluted EPS Growth Adjusted 5 Yr CAGR,True
+RR718,49802,ACCOUNTS_PAYABLE_TURNOVER,Accounts Payable Turnover,True
+RR732,49815,TOT_DEBT_TO_TOT_EQY,Total Debt to Total Equity,True
+RR774,49857,ACCOUNTS_PAYABLE_TURNOVER_DAYS,Accounts Payable Turnover Days,True
+RR798,49881,CASH_CONVERSION_CYCLE,Cash Conversion Cycle,True
+RR799,49882,DILUTED_EPS_BEF_XO_ITEMS_GROWTH,Diluted EPS before XO Items - 1 Yr Growth,True
+RR800,49883,TRAIL_12M_NET_SALES,Trailing 12M Net Sales,True
+RR803,49886,TRAIL_12M_OPER_INC,Trailing 12M Operating Inc(Loss),True
+RR824,49907,TRAIL_12M_CASH_FROM_OPER,Trailing 12M Cash From Operations,True
+RR825,49908,TRAIL_12M_CAP_EXPEND,Trailing 12M Capital Expenditures,True
+RR841,49924,TRAIL_12M_EBITDA,Trailing 12M EBITDA,True
+RR843,49926,TRAIL_12M_FREE_CASH_FLOW,Trailing 12M Free Cash Flow,True
+RR861,49944,GROSS_PROFIT,Gross Profit,True
+RR866,49949,MODIFIED_WORK_CAP_GROWTH,Modified Working Capital - 1 Yr Growth,True
+RR877,49960,DILUTED_EV,Diluted Enterprise Value,True
+RR880,49963,TCE_RATIO,Tangible Common Equity Ratio,True
+RR889,49966,PX_TO_FREE_CASH_FLOW,Price to Free Cash Flow,True
+RR891,49968,ACCOUNTS_RECEIVABLE_GROWTH,Accounts Receivable 1 Yr Growth,True
+RR892,49969,INVENTORY_GROWTH,Inventory - 1 Yr Growth,True
+RR900,49977,PE_RATIO,Price Earnings Ratio (P/E),True
+RR903,49980,PX_TO_BOOK_RATIO,Price to Book Ratio,True
+RR904,49981,PX_TO_SALES_RATIO,Price to Sales Ratio,True
+RR908,49985,PX_TO_CASH_FLOW,Price/Cash Flow,True
+RR972,50011,PX_TO_TANG_BV_PER_SH,Price to Tangible Book Value per Share,True
+RX011,50177,CASH_FLOW_GROWTH,Cash Flow - 1 Yr Growth,True
+RX026,50192,NORMALIZED_ROE,Normalized ROE,True
+RX035,50201,HIGH_PX_TO_SALES_RATIO,High Price to Sales Ratio,True
+RX036,50202,LOW_PX_TO_SALES_RATIO,Low Price to Sales Ratio,True
+RX046,50212,GEO_GROW_EBITDA,EBITDA Growth 5 Year CAGR,True
+RX059,50225,CF_FREE_CASH_FLOW_FIRM,Free Cash Flow to Firm,True
+RX060,50226,TRAIL_12M_FREE_CASH_FLOW_FIRM,Trailing 12M Free Cash Flow To Firm,True
+RX061,50227,EV_TO_T12M_FREE_CASH_FLOW_FIRM,EV to Trailing 12M Free Cash Flow to Firm,True
+RX064,50230,TRAIL_12M_CASH_FLOW_FIRM,Trailing 12M Cash Flow To Firm,True
+RX065,50231,EV_TO_T12M_CASH_FLOW_FIRM,EV to Trailing 12M Cash Flow to Firm,True
+RX070,50236,ACCOUNTS_PAYABLE_GROWTH_1YR,Accounts Payable 1 Year Growth,True
+RX072,50238,FREE_CASH_FLOW_YIELD,Free Cash Flow Yield,True
+RX183,50345,TOT_FAIR_VAL_ASSETS_TO_TOT_EQTY,Total Fair Value Assets to Total Equity,True
+RX187,50349,TOT_FAIR_VAL_ASSET_TO_TOT_ASSETS,Total Fair Value Assets to Total Assets,True
+RX209,50368,EBITDA_AFTER_CAPEX,EBITDA after CAPEX,True
+RX218,50377,ACTUAL_SALES_PER_EMPL,Sales per Employee,True
+RX220,50379,NET_DEBT_TO_EBITDA,Net Debt/EBITDA,True
+RX224,50383,EBITA,EBITA,True
+RX225,50384,EBITDA_TO_REVENUE,EBITDA Margin,True
+RX243,50402,FREE_CASH_FLOW_EQUITY,Free Cash Flow to Equity,True
+RX290,50445,5Y_GEO_GROWTH_DILUTED_EPS_BEF_XO,Diluted EPS before XO - 5 Yr Geometric Growth,True
+RX291,50446,5Y_GEO_GROWTH_DILUTED_EPS,Diluted EPS - 5 Yr Geometric Growth,True
+RX313,50468,LT_DEBT_TO_TOT_EQY,LT Debt to Total Equity,True
+RX530,50677,T12M_DVDS_PAID,Trailing 12M Dividends Paid,True
+RX531,50678,T12M_NET_CAPITAL_STOCK,Trailing 12M Net Capital Stock,True
+RX532,50679,T12M_CHG_LT_DEBT,Trailing 12M Change in Long Term Debt,True
+RX533,50680,T12M_CHG_ST_BORROWINGS,Trailing 12M Change in Short Term Borrowings,True
+RX534,50681,SHAREHOLDER_YIELD_CFF,Shareholder Yield (Cash Flow from Financing),True
+RX535,50682,RETURNED_CAPITAL_EX_DEBT,Returned Capital (Ex Debt Repayments),True
+RX536,50683,SHAREHOLDER_YIELD_EX_DEBT,Shareholder Yield (Ex Debt Repayments),True
+RX537,50684,T12_CFF,T12 Cash Flow from Financing-Shareholder Return,True
+RX538,50685,T12_OTHER_CFF,Trailing 12M Other Financing Activities,True
+RX896,50912,NET_DEBT_%_CAPITAL,Net Debt Percent of Total Capital,True
+RX951,50947,EBITDA_TO_INTEREST_EXPN,EBITDA to Interest Expense,True
+S0127,51023,ARDR_CAPITAL_LEASE_YEAR_1,ARD Ref Capital Lease Year 1,True
+S0132,51028,ARDR_CAPITAL_LEASE_BEYOND_YEAR_5,ARD Ref Capital Lease Beyond Year 5,True
+S0133,51029,ARDR_TOTAL_CAPITAL_LEASE,ARD Ref Total Capital Lease,True
+S0504,51118,ARDR_AUDIT_FEE_TO_MAIN_AUDITOR,ARD Ref Audit Service Fee Paid to Main Auditor,True
+S0505,51119,ARDR_AUDIT_FEE_TO_OTHER_AUDITORS,ARD Ref Audit Service Fee Paid to Other Auditors,True
+S0506,51120,ARDR_NONAUDIT_FEE_TO_MAIN_AUDIT,ARD Ref Nonaudit Service Fee Paid to Main Auditor,True
+S0507,51121,ARDR_NONAUDIT_TO_OTHER_AUDITORS,ARD Ref Nonaudit Service Fee Pd to Other Auditors,True
+S0528,51138,ARDR_CAPITAL_LEASE_YR_2_5,ARD Ref Capital Leases - Years 2 - 5,True
+S0612,51205,ARD_CAPITAL_LEASE_INTEREST,ARD Capital Lease Interest,True
+S3402,52044,ARDR_NON_GAAP_PRETAX_INCOME,ARD Ref Non-GAAP Pre-Tax Income,True
+S3530,52134,ARDR_TAX_EFFECT_NON_GAAP_ADJ,ARD Ref Tax Effect on Non-GAAP Adjustments,True
+S3691,52203,ARDR_OPTIONS_BEGINNING_OF_PERIOD,ARD Ref Options at Beginning of Period,True
+S3874,52242,ARDR_NET_DEBT_CASH,ARD Ref Net Debt Cash,True
+S5019,52491,ARDR_EBIT,ARD Ref Earnings Before Interest and Taxes,True
+S5809,52839,ARDR_EBITDA_MARGIN,ARD Ref EBITDA Margin,True
+S5963,52844,ARDR_SHARHLDR_EQY_BEGIN_PERIOD,ARD Ref Shareholder - Equity - Beginning Period,True
+S6435,52935,ARDR_FCF,ARDR Free Cash Flow,True
+VM001,58170,ALTMAN_Z_SCORE,Altman's Z-Score,True
