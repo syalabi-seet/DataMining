@@ -1,6 +1,9 @@
 TR.TotAssets.date
 TR.PriceClose.date
+TR.F.MktCap.date
+TR.CompanySharesOutstanding.date
 TR.CompanyName
+TR.CompanySharesOutstanding
 TR.RegistrationCountry
 TR.ExchangeCountry
 TR.HeadquartersCountry
