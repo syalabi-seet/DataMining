@@ -12,42 +12,6 @@ from itertools import islice
 from loguru import logger
 
 
-## Helper functions
-def match_years(file_path):
-    save_path = os.path.splitext(file_path)[0] + "_matched.csv"
-    if os.path.exists(save_path):
-        return
-
-    df = pd.read_csv(
-        file_path, 
-        low_memory=False, 
-        parse_dates=['TotAssets Date', 'PriceClose Date'], 
-        infer_datetime_format=True)
-
-    df1 = df.drop(columns=['PriceClose Date', 'Price Close'])
-    df1.insert(2, 'TotAssets.Year', df1['TotAssets Date'].dt.year)
-
-    # Pop out PriceClose columns
-    df2 = df[['Instrument', 'PriceClose Date', 'Price Close']]
-    df2.insert(2, 'PriceClose.Year', df2['PriceClose Date'].dt.year)
-
-    # Left join PriceClose sub-frame to main frame
-    df3 = pd.merge(
-        df1, 
-        df2, 
-        left_on=['Instrument', 'TotAssets.Year'], 
-        right_on=['Instrument', 'PriceClose.Year'], 
-        how='left')
-
-    # Shift PriceClose columns position
-    PriceClose_year = df3.pop("PriceClose.Year")
-    PriceClose_date = df3.pop("PriceClose Date")
-    df3.insert(3, 'PriceClose.Year', PriceClose_year)
-    df3.insert(3, 'PriceClose Date', PriceClose_date)
-    
-    df3.to_csv(save_path, index=False)
-
-
 class EikonHelper:
     def __init__(
             self, 
@@ -89,10 +53,9 @@ class EikonHelper:
 
     def _get_schema(self, empty_path):
         batch_data, _ = ek.get_data(
-            self.tickers[0], 
+            instruments=self.tickers[0], 
             fields=self.fields,
-            parameters={
-                'Scale': 0, 'SDate': 0, 'EDate': -self.time_period, 'FRQ': 'FY'})
+            parameters=self.parameters)
 
         batch_data.columns.values[1] = 'TotAssets.Date'
         batch_data.columns.values[2] = 'Price Close.Date'
@@ -103,9 +66,9 @@ class EikonHelper:
         return empty_schema
 
     def _get_data(self):
-        self.save_path = os.path.join("assets", "Eikon", f"{self.region.lower()}_data.parquet")
+        self.save_path = os.path.join("assets", "Eikon", f"{self.region.lower()}_data.csv")
         if os.path.exists(self.save_path):
-            data = pd.read_parquet(self.save_path)
+            data = pd.read_csv(self.save_path, low_memory=False)
         else:
             empty_path = os.path.join("assets", "metadata", "empty_eikon_data.parquet")
             if not os.path.exists(empty_path):
