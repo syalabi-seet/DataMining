@@ -53,17 +53,19 @@ class EikonHelper:
             self, 
             region, 
             cell_limit_per_request=100_000, 
-            time_period=25, 
-            request_daily_limit=10_000):      
+            time_period=25,
+            sleep_duration=1
+            ):      
 
         self._set_app_key()
         self.region = region
         self.cell_limit_per_request = cell_limit_per_request
         self.time_period = time_period
+        self.sleep_duration = sleep_duration
         self.tickers = self._get_tickers()
         self.fields = self._get_fields()
         self.instrument_limit_per_request = (
-            self.cell_limit_per_request // (len(self.fields) * time_period))
+            self.cell_limit_per_request // (len(self.fields) * self.time_period))
         self.data = self._get_data()
         self.sub_tickers = self._get_sub_tickers()        
         self.batch_tickers = self._get_batch(
@@ -113,7 +115,7 @@ class EikonHelper:
         return data
 
     def _get_sub_tickers(self):
-        self.retrieved_tickers = self.data['Instrument'].unique().tolist()
+        self.retrieved_tickers = list(self.data['Instrument'].unique())
         sub_tickers = [
             i for i in self.tickers[self.region] 
             if i not in self.retrieved_tickers]
@@ -131,6 +133,26 @@ class EikonHelper:
         print(f"Tickers retrieved: {len(self.retrieved_tickers)}/{len(self.tickers[self.region])}")
         print("=======================================")
 
+    def extract_single(self, tickers):
+        batch_data, _ = ek.get_data(
+            list(tickers),
+            fields=self.fields,
+            parameters={'Scale': 0, 'SDate': 0, 'EDate': -self.time_period, 'FRQ': 'FY'})
+
+        batch_data.columns.values[1] = 'TotAssets.Date'
+        batch_data.columns.values[2] = 'Price Close.Date'
+        batch_data.columns.values[3] = 'MktCap.Date'
+        batch_data.columns.values[4] = 'CompanySharesOutstanding.Date'
+
+        if 'Instrument' not in batch_data.columns.tolist():
+            logger.info(f"Empty dataframe: {tickers}")
+            return
+
+        self.data = pd.concat([self.data, batch_data], ignore_index=True)
+        self.data = self.data.astype(str)
+        self.data.to_parquet(self.save_path)
+        time.sleep(self.sleep_duration)
+
     def extract(self):
         if not self.batch_tickers:
             logger.info(f"{self.region} completed")
@@ -138,23 +160,7 @@ class EikonHelper:
 
         for tickers in tqdm(self.batch_tickers):
             try:
-                batch_data, _ = ek.get_data(
-                    list(tickers),
-                    fields=self.fields,
-                    parameters={'Scale': 0, 'SDate': 0, 'EDate': -self.time_period, 'FRQ': 'FY'})
-
-                batch_data.columns.values[1] = 'TotAssets.Date'
-                batch_data.columns.values[2] = 'Price Close.Date'
-                batch_data.columns.values[3] = 'MktCap.Date'
-                batch_data.columns.values[4] = 'CompanySharesOutstanding.Date'
-                if 'Instrument' not in batch_data.columns.tolist():
-                    logger.info(f"Empty dataframe: {tickers}")
-
-                self.data = pd.concat([self.data, batch_data])
-                self.data['CUSIP Code'] = self.data['CUSIP Code'].astype(str)
-                self.data.to_parquet(self.save_path)
-                time.sleep(1)
-
+                self.extract_single(tickers)
             except Exception as e:
                 print(e)
                 continue
