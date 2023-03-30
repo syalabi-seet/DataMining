@@ -104,3 +104,5 @@ TR.F.AdExpn
 TR.F.LaborRelExpnTot
 TR.DPSActValue
 TR.F.EPSBasicExclExordItemsComTot
+TR.AnalyticEstimatedCO2Total
+TR.CO2EstimationMethod

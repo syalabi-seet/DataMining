@@ -59,7 +59,7 @@ class EikonHelper:
 
     def _get_schema(self, empty_path):
         batch_data, _ = ek.get_data(
-            instruments=self.tickers[0], 
+            instruments=self.tickers[self.region][0], 
             fields=self.fields,
             parameters=self.parameters)
 
@@ -68,7 +68,7 @@ class EikonHelper:
         batch_data.columns.values[3] = 'MktCap.Date'
         batch_data.columns.values[4] = 'CompanySharesOutstanding.Date'  
         empty_schema = pd.DataFrame(columns=batch_data.columns)
-        empty_schema.to_parquet(empty_path)
+        empty_schema.to_csv(empty_path, index=False)
         return empty_schema
 
     def _get_data(self):
@@ -76,11 +76,11 @@ class EikonHelper:
         if os.path.exists(self.save_path):
             data = pd.read_csv(self.save_path, low_memory=False)
         else:
-            empty_path = os.path.join("assets", "metadata", "empty_eikon_data.parquet")
+            empty_path = os.path.join("assets", "metadata", "empty_eikon_data.csv")
             if not os.path.exists(empty_path):
                 data = self._get_schema(empty_path)
             else:
-                data = pd.read_parquet(empty_path)
+                data = pd.read_csv(empty_path)
         return data
 
     def _get_sub_tickers(self):
