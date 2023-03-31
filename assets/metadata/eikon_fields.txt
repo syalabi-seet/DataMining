@@ -106,3 +106,4 @@ TR.DPSActValue
 TR.F.EPSBasicExclExordItemsComTot
 TR.AnalyticEstimatedCO2Total
 TR.CO2EstimationMethod
+TR.CompanyReportCurrency

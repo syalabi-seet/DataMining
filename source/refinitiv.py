@@ -31,7 +31,7 @@ class EikonHelper:
             'SDate': 0, 
             'EDate': -self.time_period, 
             'FRQ': 'FY', 
-            'Curn': 'USD'}
+            'Curn': 'Native'}
         self.tickers = self._get_tickers()
         self.fields = self._get_fields()
         self.instrument_limit_per_request = (
