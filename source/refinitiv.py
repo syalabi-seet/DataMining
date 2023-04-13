@@ -27,7 +27,7 @@ class EikonHelper:
         self.time_period = time_period
         self.sleep_duration = sleep_duration
         self.parameters = {
-            'Scale': 0, 
+            'Scale': 6, 
             'SDate': 0, 
             'EDate': -self.time_period, 
             'FRQ': 'FY', 

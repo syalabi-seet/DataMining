@@ -25,6 +25,7 @@ TR.GICSIndustryCode
 TR.GICSIndustry
 TR.GICSSubIndustryCode
 TR.GICSSubIndustry
+TR.TickerSymbol
 TR.CO2DirectScope1
 TR.CO2IndirectScope2
 TR.UpstreamScope3PurchasedGoodsAndServices
