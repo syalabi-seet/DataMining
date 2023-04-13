@@ -1,138 +1,204 @@
-"""
-https://pypi.org/project/refinitiv-data/
-"""
 import os
 import time
-import json
+import configparser
 import pandas as pd
+import polars as pl
 import refinitiv.data.eikon as ek
 
-from tqdm.notebook import tqdm
 from itertools import islice
-from loguru import logger
+from tqdm.notebook import tqdm
 
 
 class EikonHelper:
-    def __init__(
-            self, 
-            region, 
-            cell_limit_per_request=100_000, 
-            time_period=25,
-            sleep_duration=1
-            ):      
+    static_fields = [
+        "Company Name", "Country of Incorporation", "Country of Exchange", 
+        "Country of Headquarters", "Instrument Type", "ISIN", "ISIN Code",
+        "ISIN_CODE", "SEDOL", "CUSIP Code", "SIC Industry Group Code",
+        "SIC Industry Group Name", "SIC Industry Code", "SIC Industry Name", 
+        "GICS Sector Code", "GICS Sector Name", "GICS Industry Group Code", 
+        "GICS Industry Group Name", "GICS Industry Code", "GICS Industry Name",
+        "GICS Sub-Industry Code", "GICS Sub-Industry Name", "Ticker Symbol", 
+        "Currency Code"
+    ]
+    dynamic_fields = [
+        'Total Assets',
+        'Income before Discontinued Operations & Extraordinary Items',
+        'Preferred Shareholders Equity',
+        'Total Liabilities',
+        'Upstream scope 3 emissions Fuel- and Energy-related Activities',
+        'Income Taxes - Payable - Short-Term',
+        'Short-Term Debt & Current Portion of Long-Term Debt',
+        'Interest Expense - Net of Capitalized Interest',
+        "Total Shareholders' Equity incl Minority Intr & Hybrid Debt",
+        'Net Income before Minority Interest',
+        'Depreciation Depletion & Amortization - Cash Flow',
+        'Upstream scope 3 emissions Leased Assets',
+        'Upstream scope 3 emissions Employee Commuting',
+        'Minority Interest - Equity',
+        'Upstream scope 3 emissions Capital goods',
+        "Shareholders' Equity - Attributable to Parent ShHold - Total",
+        'Downstream scope 3 emissions Other',
+        'Income before Taxes',
+        'Inventories - Total',
+        'Preferred Stock - Redeemable - Total',
+        'Equity Earnings/(Loss) before Taxes including Non-Recurring',
+        'Minority Interest',
+        'Selling General & Administrative Expenses - Total',
+        'Advertising Expense',
+        'Company Shares',
+        'Upstream scope 3 emissions Other',
+        'Earnings before Interest Taxes Depreciation & Amortization',
+        'Research & Development Expense',
+        'Income Taxes',
+        'Trade Account Payables - Total',
+        'Downstream scope 3 emissions End-of-life Treatment of Sold Products',
+        'EPS - Diluted - incl Extraordinary Items, Common - Total',
+        'Deferred Tax & Investment Tax Credits - Long-Term',
+        'Downstream scope 3 emissions Processing of Sold Products',
+        'EPS - Diluted - excl Extraordinary Items - Normalized -Total',
+        'Estimated CO2 Equivalents Emission Total',
+        'Cash & Short Term Investments - Total',
+        'Dividends - Common - Cash Paid',
+        'Market Capitalization',
+        'Extraordinary Activities - after Tax - Gain/(Loss)',
+        'Total Current Assets',
+        'Dividends - Preferred - Cash Paid',
+        'Net Income after Minority Interest',
+        'Deferred Tax - Liability - Long-Term',
+        'Cost Of Goods Sold - Actual',
+        'Downstream scope 3 emissions Use of Sold Products',
+        'Upstream scope 3 emissions Business Travel',
+        'Total Current Liabilities',
+        'Upstream scope 3 emissions Transportation and Distribution',
+        'EPS - Diluted - excl Exord Items Applicable to Common Total',
+        'Interest Income - Non-Bank',
+        'Downstream scope 3 emissions Leased Assets',
+        'Loans & Receivables - Total',
+        'Non-Recurring Income/(Expense) - Total',
+        'EPS - Basic - excl Extraordinary Items - Normalized - Total',
+        'Labor & Related Expenses - Total',
+        'Revenue from Business Activities - Total',
+        'Depreciation & Amortization - Supplemental',
+        'Liquidation & Redemption Value of Redeem Pref Stock (Eq)',
+        'Common Equity Attributable to Parent Shareholders',
+        'Net Cash Flow from Operating Activities',
+        'Downstream scope 3 emissions Transportation and Distribution',
+        'Earnings before Interest & Taxes (EBIT)',
+        'CO2 Equivalent Emissions Indirect, Scope 2',
+        'Capital Expenditures - Total',
+        'Price Close',
+        'Operating Profit before Non-Recurring Income/Expense',
+        'Downstream scope 3 emissions Franchises',
+        'Income available to Common excluding Extraordinary Items',
+        'Sale of Tangible & Intangible Fixed Assets - Gain/(Loss)',
+        'Upstream scope 3 emissions Purchased goods and services',
+        'Downstream scope 3 emissions Investments',
+        'Debt - Long-Term - Total',
+        'Dividend Per Share - Actual',
+        'Common Shares - Outstanding - Total',
+        'Other Non-Operating Income/(Expense) - Total',
+        'CO2 Equivalent Emissions Direct, Scope 1',
+        'EPS - Basic - excl Extraordinary Items, Common - Total',
+        'Upstream scope 3 emissions Waste Generated in Operations',
+        'Property Plant & Equipment - Net - Total',
+        'Cost of Revenues - Unclassified'
+    ]
 
-        self._set_app_key()
-        self.region = region
-        self.cell_limit_per_request = cell_limit_per_request
+    def __init__(self, cell_limit=100_000, time_period=25, save_freq=5):
+        self.all_fields, self.all_instruments = self.get_metadata()
+        self.save_path = os.path.join("assets", "Eikon", "data.parquet")
+
+        self.cell_limit = cell_limit
         self.time_period = time_period
-        self.sleep_duration = sleep_duration
-        self.parameters = {
-            'Scale': 6, 
-            'SDate': 0, 
-            'EDate': -self.time_period, 
-            'FRQ': 'FY', 
-            'Curn': 'Native'}
-        self.tickers = self._get_tickers()
-        self.fields = self._get_fields()
-        self.instrument_limit_per_request = (
-            self.cell_limit_per_request // (len(self.fields) * self.time_period))
-        self.data = self._get_data()
-        self.sub_tickers = self._get_sub_tickers()        
-        self.batch_tickers = self._get_batch(
-            self.sub_tickers, self.instrument_limit_per_request)
-        self._get_summary()
+        self.save_freq = save_freq
+        self.instrument_limit = cell_limit // (len(self.all_fields) * self.time_period)            
 
-    def _set_app_key(self):
-        with open(".config/refinitiv-data.config.json", 'r') as f:
-            app_key = json.load(f)['sessions']['platform']['rdp']['app-key']
-        ek.set_app_key(app_key)
+        self.set_app_key()
+        self.get_data()
+        self.get_summary()
 
-    def _get_fields(self):
-        with open("assets\metadata\eikon_fields.txt", "r") as f:
+    def set_app_key(self):
+        config = configparser.ConfigParser()
+        config.read(os.path.join(".config", "refinitiv.ini"))
+        ek.set_app_key(config["RDP"]["app_key"])
+
+    def get_metadata(self):
+        meta_dir = os.path.join("assets", "metadata",)
+        with open(os.path.join(meta_dir, "fields.txt")) as f:
             fields = [x.strip("\n") for x in f]
-        return fields
 
-    def _get_tickers(self):
-        with open("assets\metadata\eikon_tickers.json", "r") as f:
-            tickers = json.load(f)
-        return tickers
+        with open(os.path.join(meta_dir, "instruments.txt")) as f:
+            instruments = [x.strip("\n") for x in f]
+        return fields, instruments
 
-    def _get_schema(self, empty_path):
-        batch_data, _ = ek.get_data(
-            instruments=self.tickers[self.region][0], 
-            fields=self.fields,
-            parameters=self.parameters)
+    def get_single_batch(self, instruments, fields=None):
+        df = pl.from_pandas(ek.get_data(
+            instruments=instruments,
+            fields=fields if fields else self.all_fields,
+            parameters={
+                "Scale": 6,
+                "SDate": 0,
+                "EDate": -self.time_period,
+                "FRQ": "FY",
+                "Curn": "Native"
+            }
+        )[0])
 
-        batch_data.columns.values[1] = 'TotAssets.Date'
-        batch_data.columns.values[2] = 'Price Close.Date'
-        batch_data.columns.values[3] = 'MktCap.Date'
-        batch_data.columns.values[4] = 'CompanySharesOutstanding.Date'  
-        empty_schema = pd.DataFrame(columns=batch_data.columns)
-        empty_schema.to_csv(empty_path, index=False)
-        return empty_schema
+        def ffill(c):
+            s = pl.col(c).cast(str)
+            return (pl
+                .when(s=="")
+                .then(None)
+                .otherwise(s)
+                .fill_null(strategy="forward")
+                .over("Instrument")
+                .keep_name()
+            )
 
-    def _get_data(self):
-        self.save_path = os.path.join("assets", "Eikon", f"{self.region.lower()}_data.csv")
+        return (df
+            .lazy()
+            .rename({k: k.strip() for k in df.columns})
+            .with_columns([ffill(c) for c in EikonHelper.static_fields])
+            .with_columns([pl.col(c).cast(pl.Float64) for c in EikonHelper.dynamic_fields])
+        )
+    
+    def save_data(self):
+        self.data.collect().write_parquet(self.save_path)
+
+    def get_data(self):
         if os.path.exists(self.save_path):
-            data = pd.read_csv(self.save_path, low_memory=False)
+            self.data = pl.read_parquet(self.save_path)
         else:
-            empty_path = os.path.join("assets", "metadata", "empty_eikon_data.csv")
-            if not os.path.exists(empty_path):
-                data = self._get_schema(empty_path)
-            else:
-                data = pd.read_csv(empty_path)
-        return data
+            self.data = self.get_single_batch(instruments=["AAPL.OQ", "AMZN.OQ"])
+            self.save_data()
+        self.data = self.data.lazy()
+    
+    def get_summary(self):
+        self.retrieved_instruments = pl.read_parquet(
+            self.save_path, columns=["Instrument"])["Instrument"].unique().to_list()
+        self.remaining_instruments = list(set(self.all_instruments).difference(set(self.retrieved_instruments)))
+        self.batches = self.get_batches(self.remaining_instruments, self.instrument_limit)
 
-    def _get_sub_tickers(self):
-        self.retrieved_tickers = list(self.data['Instrument'].unique())
-        sub_tickers = [
-            i for i in self.tickers[self.region] 
-            if i not in self.retrieved_tickers]
-        return sub_tickers
+        print("=======================================")
+        print("Cell limit:", self.cell_limit)
+        print("Instrument limit:", self.instrument_limit)
+        print("Tickers retrieved: %s/%s" % (len(self.retrieved_instruments), len(self.all_instruments)))
+        print("Batches remaining:", len(self.batches))
+        print("=======================================")
 
-    def _get_batch(self, it, size):
+    def get_batches(self, it, size):
         it = iter(it)
-        return list(iter(lambda: tuple(islice(it, size)), ()))
-
-    def _get_summary(self):
-        print("=======================================")
-        print("Region:", self.region)
-        print("Cell limit per request:", self.cell_limit_per_request)
-        print("Instrument limit per request:", self.instrument_limit_per_request)
-        print(f"Tickers retrieved: {len(self.retrieved_tickers)}/{len(self.tickers[self.region])}")
-        print("=======================================")
-
-    def extract_single(self, tickers):
-        batch_data, _ = ek.get_data(
-            instruments=list(tickers),
-            fields=self.fields,
-            parameters=self.parameters)
-
-        batch_data.columns.values[1] = 'TotAssets.Date'
-        batch_data.columns.values[2] = 'Price Close.Date'
-        batch_data.columns.values[3] = 'MktCap.Date'
-        batch_data.columns.values[4] = 'CompanySharesOutstanding.Date'
-
-        if 'Instrument' not in batch_data.columns.tolist():
-            logger.info(f"Empty dataframe: {tickers}")
-            return
-
-        self.data = pd.concat([self.data, batch_data], ignore_index=True)
-        self.data.to_csv(self.save_path, index=False)
-        time.sleep(self.sleep_duration)
+        return list(iter(lambda: list(islice(it, size)), []))   
 
     def extract(self):
-        if not self.batch_tickers:
-            logger.info(f"{self.region} completed")
-            return
-
-        for tickers in tqdm(self.batch_tickers):
-            try:
-                self.extract_single(tickers)
-            except Exception as e:
-                print(e)
-                continue
-
-
-if __name__ == "__main__":
-    eikon_helper = EikonHelper(region="Europe")
+        for i, instruments in tqdm(enumerate(self.batches), total=len(self.batches)):
+            df = self.get_single_batch(instruments=instruments)
+            for attempt in range(3):
+                try:
+                    self.data = pl.concat([self.data, df])
+                except:
+                    print(f"Retry{'.'*attempt+1}")
+            if not i % self.save_freq:
+                self.save_data()
+        return self.save_data()
+            
