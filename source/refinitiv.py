@@ -104,9 +104,9 @@ class EikonHelper:
 
     def extract_single(self, tickers):
         batch_data, _ = ek.get_data(
-            list(tickers),
+            instruments=list(tickers),
             fields=self.fields,
-            parameters={'Scale': 0, 'SDate': 0, 'EDate': -self.time_period, 'FRQ': 'FY'})
+            parameters=self.parameters)
 
         batch_data.columns.values[1] = 'TotAssets.Date'
         batch_data.columns.values[2] = 'Price Close.Date'
@@ -118,8 +118,7 @@ class EikonHelper:
             return
 
         self.data = pd.concat([self.data, batch_data], ignore_index=True)
-        self.data = self.data.astype(str)
-        self.data.to_parquet(self.save_path)
+        self.data.to_csv(self.save_path, index=False)
         time.sleep(self.sleep_duration)
 
     def extract(self):
