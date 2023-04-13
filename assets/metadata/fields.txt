@@ -1,7 +1,4 @@
-TR.TotAssets.date
-TR.PriceClose.date
 TR.F.MktCap.date
-TR.CompanySharesOutstanding.date
 TR.CompanyName
 TR.CompanySharesOutstanding
 TR.RegistrationCountry
@@ -26,6 +23,7 @@ TR.GICSIndustry
 TR.GICSSubIndustryCode
 TR.GICSSubIndustry
 TR.TickerSymbol
+TR.CompanyReportCurrency
 TR.CO2DirectScope1
 TR.CO2IndirectScope2
 TR.UpstreamScope3PurchasedGoodsAndServices
@@ -107,4 +105,3 @@ TR.DPSActValue
 TR.F.EPSBasicExclExordItemsComTot
 TR.AnalyticEstimatedCO2Total
 TR.CO2EstimationMethod
-TR.CompanyReportCurrency
