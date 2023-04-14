@@ -1,7 +1,6 @@
 import os
 import time
 import configparser
-import pandas as pd
 import polars as pl
 import refinitiv.data.eikon as ek
 
@@ -104,18 +103,19 @@ class EikonHelper:
         'Cost of Revenues - Unclassified'
     ]
 
-    def __init__(self, cell_limit=100_000, time_period=25, save_freq=5):
+    def __init__(self, cell_limit=200_000, time_period=25, save_freq=1, n_batches=None):
         self.all_fields, self.all_instruments = self.get_metadata()
         self.save_path = os.path.join("assets", "Eikon", "data.parquet")
 
         self.cell_limit = cell_limit
         self.time_period = time_period
         self.save_freq = save_freq
+        self.n_batches = n_batches
         self.instrument_limit = cell_limit // (len(self.all_fields) * self.time_period)            
 
         self.set_app_key()
         self.get_data()
-        self.get_summary()
+        self.get_state()
 
     def set_app_key(self):
         config = configparser.ConfigParser()
@@ -132,6 +132,26 @@ class EikonHelper:
         return fields, instruments
 
     def get_single_batch(self, instruments, fields=None):
+        def ffill(c):
+            return (pl
+                .col(c)
+                .fill_null(strategy="forward")
+                .over("Instrument")
+                .keep_name()
+            )
+        
+        def fill_null(c):
+            s = pl.col(c).cast(str)
+            return pl.when(s=="").then(None).otherwise(s).keep_name()
+        
+        def date_func(c):
+            s = c.str.strptime(pl.Date, "%Y-%m-%dT%H:%M:%SZ", strict=False)
+            return (pl
+                .when(c.is_not_null())
+                .then(s)
+                .otherwise(None)
+            )
+        
         df = pl.from_pandas(ek.get_data(
             instruments=instruments,
             fields=fields if fields else self.all_fields,
@@ -144,22 +164,13 @@ class EikonHelper:
             }
         )[0])
 
-        def ffill(c):
-            s = pl.col(c).cast(str)
-            return (pl
-                .when(s=="")
-                .then(None)
-                .otherwise(s)
-                .fill_null(strategy="forward")
-                .over("Instrument")
-                .keep_name()
-            )
-
         return (df
             .lazy()
             .rename({k: k.strip() for k in df.columns})
+            .with_columns([fill_null(c) for c in EikonHelper.static_fields])
             .with_columns([ffill(c) for c in EikonHelper.static_fields])
             .with_columns([pl.col(c).cast(pl.Float64) for c in EikonHelper.dynamic_fields])
+            .with_columns(Date=date_func(pl.col("Date")))
         )
     
     def save_data(self):
@@ -173,9 +184,9 @@ class EikonHelper:
             self.save_data()
         self.data = self.data.lazy()
     
-    def get_summary(self):
-        self.retrieved_instruments = pl.read_parquet(
-            self.save_path, columns=["Instrument"])["Instrument"].unique().to_list()
+    def get_state(self):
+        data = pl.read_parquet(self.save_path, columns=["Instrument"])
+        self.retrieved_instruments = data["Instrument"].unique().to_list()
         self.remaining_instruments = list(set(self.all_instruments).difference(set(self.retrieved_instruments)))
         self.batches = self.get_batches(self.remaining_instruments, self.instrument_limit)
 
@@ -191,14 +202,12 @@ class EikonHelper:
         return list(iter(lambda: list(islice(it, size)), []))   
 
     def extract(self):
-        for i, instruments in tqdm(enumerate(self.batches), total=len(self.batches)):
-            df = self.get_single_batch(instruments=instruments)
-            for attempt in range(3):
-                try:
-                    self.data = pl.concat([self.data, df])
-                except:
-                    print(f"Retry{'.'*attempt+1}")
-            if not i % self.save_freq:
-                self.save_data()
+        batch = self.batches[:self.n_batches] if self.n_batches else self.batches
+        for i, instruments in tqdm(enumerate(batch), total=len(batch)):
+            try:
+                df = self.get_single_batch(instruments=instruments)
+                self.data = pl.concat([self.data, df])
+            except Exception as e:
+                print(e, instruments)
+                continue
         return self.save_data()
-            
