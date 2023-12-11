@@ -2,6 +2,7 @@ import os
 import time
 import configparser
 import polars as pl
+import pandas as pd
 import eikon as ek
 
 from itertools import islice
@@ -29,18 +30,18 @@ class EikonHelper:
         ek.set_app_key(config["RDP"]["app_key"])
 
     def get_metadata(self):
-        meta_dir = os.path.join("assets", "metadata",)
+        meta_dir = os.path.join("assets", "metadata")
         with open(os.path.join(meta_dir, "fields.txt")) as f:
             fields = [x.strip("\n") for x in f]
 
-        # Get date fields
-        new_fields = []
-        for field in fields:
-            new_fields.extend([field, field+".DATE"])
+        # # Get date fields
+        # new_fields = []
+        # for field in fields:
+        #     new_fields.extend([field, field+".DATE"])
 
         with open(os.path.join(meta_dir, "instruments.txt")) as f:
             instruments = [x.strip("\n") for x in f]
-        return new_fields, instruments
+        return fields, instruments
 
     def get_single_batch(self, instruments, fields=None):
         def ffill(c):
@@ -79,7 +80,6 @@ class EikonHelper:
         return (df
             .lazy()
             .rename({k: k.strip() for k in df.columns})
-            .rename({"None": "Instrument"})
             # .with_columns([fill_null(c) for c in EikonHelper.static_fields])
             # .with_columns([ffill(c) for c in EikonHelper.static_fields])
             # .with_columns([pl.col(c).cast(pl.Float64) for c in EikonHelper.dynamic_fields])
@@ -125,4 +125,86 @@ class EikonHelper:
                 time.sleep(15)
             except Exception as e:
                 print(e, instruments)
+                continue
+
+
+class Eikon2:
+    def __init__(self):
+        ek.set_app_key("fd36c20b01ed4ad6b3248805ae5031749349e3c9")
+    
+    def get_instruments(self, country):
+        with open(r"assets\metadata\instruments.txt", "r") as f:
+            instruments = [x.strip("\n") for x in f]
+
+        retrieved_instruments = [x.strip(".csv") for x in os.listdir("assets\Eikon")]
+        remaining_instruments = list(set(instruments).difference(retrieved_instruments))
+        
+        if country:
+            country_instruments = pd.read_csv("assets\metadata\misc\REF_exchangecountry.csv")
+            country_instruments = country_instruments[country_instruments["Country of Exchange"]==country]["Instrument"].tolist()
+            return [instrument for instrument in remaining_instruments if instrument in country_instruments]
+        else:
+            return remaining_instruments
+        
+    def get_fields(self):
+        with open(r"assets\metadata\fields.txt", "r") as f:
+            fields = [x.strip("\n") for x in f]
+
+        return fields
+    
+    def download_single_instrument(self, instrument):
+        instrument_path = os.path.join("assets", "Eikon", f"{instrument}.csv")
+        all_fields = self.get_fields()
+        no_date_fields = [
+            "TR.GICSINDUSTRY",
+            "TR.HEADQUARTERSCOUNTRY",
+            "TR.SICINDUSTRY",
+            "TR.COMPANYREPORTCURRENCY",
+            "TR.SICINDUSTRYCODE",
+            "TR.SICINDUSTRYGROUPCODE",
+            "TR.GICSSUBINDUSTRYCODE",
+            "ISIN_CODE",
+            "TR.GICSSECTORCODE",
+            "TR.GICSINDUSTRYGROUP",
+            "TR.EXCHANGECOUNTRY",
+            "TR.COMPANYNAME",
+            "TR.GICSINDUSTRYCODE",
+            "TR.INSTRUMENTTYPE",
+            "TR.GICSSECTOR",
+            "TR.SICINDUSTRYGROUP",
+            "TR.ISINCODE",
+            "TR.GICSSUBINDUSTRY",
+            "TR.TICKERSYMBOL",
+            "TR.CUSIPCODE",
+            "TR.REGISTRATIONCOUNTRY",
+            "TR.GICSINDUSTRYGROUPCODE"
+        ]
+        date_fields = [field+".DATE" for field in all_fields if field not in no_date_fields]
+
+        df, err = ek.get_data(
+            instruments=[instrument],
+            fields=all_fields+date_fields,
+            parameters={
+                "Scale": 6,
+                "SDate": 0,
+                "EDate": -25,
+                "FRQ": "FY",
+                "Curn": "Native"
+            },
+            field_name=True
+        )        
+        # for field in date_fields:
+        #     print(field)
+        #     df[field] = pd.to_datetime(df[field], format="%Y-%m-%dT%H:%M:%SZ")
+
+        df.to_csv(instrument_path, index=False)
+
+    def download_data(self, country=None):
+        instruments = self.get_instruments(country)
+        for instrument in tqdm(instruments):
+            try:
+                self.download_single_instrument(instrument)
+            except:
+                print(f"Failed: {instrument}")
+                # time.sleep(15)
                 continue
