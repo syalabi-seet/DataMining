@@ -2,107 +2,13 @@ import os
 import time
 import configparser
 import polars as pl
-import refinitiv.data.eikon as ek
+import eikon as ek
 
 from itertools import islice
-from tqdm.notebook import tqdm
+from tqdm import tqdm
 
 
 class EikonHelper:
-    static_fields = [
-        "Company Name", "Country of Incorporation", "Country of Exchange", 
-        "Country of Headquarters", "Instrument Type", "ISIN", "ISIN Code",
-        "ISIN_CODE", "SEDOL", "CUSIP Code", "SIC Industry Group Code",
-        "SIC Industry Group Name", "SIC Industry Code", "SIC Industry Name", 
-        "GICS Sector Code", "GICS Sector Name", "GICS Industry Group Code", 
-        "GICS Industry Group Name", "GICS Industry Code", "GICS Industry Name",
-        "GICS Sub-Industry Code", "GICS Sub-Industry Name", "Ticker Symbol", 
-        "Currency Code"
-    ]
-    dynamic_fields = [
-        'Total Assets',
-        'Income before Discontinued Operations & Extraordinary Items',
-        'Preferred Shareholders Equity',
-        'Total Liabilities',
-        'Upstream scope 3 emissions Fuel- and Energy-related Activities',
-        'Income Taxes - Payable - Short-Term',
-        'Short-Term Debt & Current Portion of Long-Term Debt',
-        'Interest Expense - Net of Capitalized Interest',
-        "Total Shareholders' Equity incl Minority Intr & Hybrid Debt",
-        'Net Income before Minority Interest',
-        'Depreciation Depletion & Amortization - Cash Flow',
-        'Upstream scope 3 emissions Leased Assets',
-        'Upstream scope 3 emissions Employee Commuting',
-        'Minority Interest - Equity',
-        'Upstream scope 3 emissions Capital goods',
-        "Shareholders' Equity - Attributable to Parent ShHold - Total",
-        'Downstream scope 3 emissions Other',
-        'Income before Taxes',
-        'Inventories - Total',
-        'Preferred Stock - Redeemable - Total',
-        'Equity Earnings/(Loss) before Taxes including Non-Recurring',
-        'Minority Interest',
-        'Selling General & Administrative Expenses - Total',
-        'Advertising Expense',
-        'Company Shares',
-        'Upstream scope 3 emissions Other',
-        'Earnings before Interest Taxes Depreciation & Amortization',
-        'Research & Development Expense',
-        'Income Taxes',
-        'Trade Account Payables - Total',
-        'Downstream scope 3 emissions End-of-life Treatment of Sold Products',
-        'EPS - Diluted - incl Extraordinary Items, Common - Total',
-        'Deferred Tax & Investment Tax Credits - Long-Term',
-        'Downstream scope 3 emissions Processing of Sold Products',
-        'EPS - Diluted - excl Extraordinary Items - Normalized -Total',
-        'Estimated CO2 Equivalents Emission Total',
-        'Cash & Short Term Investments - Total',
-        'Dividends - Common - Cash Paid',
-        'Market Capitalization',
-        'Extraordinary Activities - after Tax - Gain/(Loss)',
-        'Total Current Assets',
-        'Dividends - Preferred - Cash Paid',
-        'Net Income after Minority Interest',
-        'Deferred Tax - Liability - Long-Term',
-        'Cost Of Goods Sold - Actual',
-        'Downstream scope 3 emissions Use of Sold Products',
-        'Upstream scope 3 emissions Business Travel',
-        'Total Current Liabilities',
-        'Upstream scope 3 emissions Transportation and Distribution',
-        'EPS - Diluted - excl Exord Items Applicable to Common Total',
-        'Interest Income - Non-Bank',
-        'Downstream scope 3 emissions Leased Assets',
-        'Loans & Receivables - Total',
-        'Non-Recurring Income/(Expense) - Total',
-        'EPS - Basic - excl Extraordinary Items - Normalized - Total',
-        'Labor & Related Expenses - Total',
-        'Revenue from Business Activities - Total',
-        'Depreciation & Amortization - Supplemental',
-        'Liquidation & Redemption Value of Redeem Pref Stock (Eq)',
-        'Common Equity Attributable to Parent Shareholders',
-        'Net Cash Flow from Operating Activities',
-        'Downstream scope 3 emissions Transportation and Distribution',
-        'Earnings before Interest & Taxes (EBIT)',
-        'CO2 Equivalent Emissions Indirect, Scope 2',
-        'Capital Expenditures - Total',
-        'Price Close',
-        'Operating Profit before Non-Recurring Income/Expense',
-        'Downstream scope 3 emissions Franchises',
-        'Income available to Common excluding Extraordinary Items',
-        'Sale of Tangible & Intangible Fixed Assets - Gain/(Loss)',
-        'Upstream scope 3 emissions Purchased goods and services',
-        'Downstream scope 3 emissions Investments',
-        'Debt - Long-Term - Total',
-        'Dividend Per Share - Actual',
-        'Common Shares - Outstanding - Total',
-        'Other Non-Operating Income/(Expense) - Total',
-        'CO2 Equivalent Emissions Direct, Scope 1',
-        'EPS - Basic - excl Extraordinary Items, Common - Total',
-        'Upstream scope 3 emissions Waste Generated in Operations',
-        'Property Plant & Equipment - Net - Total',
-        'Cost of Revenues - Unclassified'
-    ]
-
     def __init__(self, cell_limit=200_000, time_period=25, save_freq=1, n_batches=None):
         self.all_fields, self.all_instruments = self.get_metadata()
         self.save_path = os.path.join("assets", "Eikon", "data.parquet")
@@ -127,9 +33,14 @@ class EikonHelper:
         with open(os.path.join(meta_dir, "fields.txt")) as f:
             fields = [x.strip("\n") for x in f]
 
+        # Get date fields
+        new_fields = []
+        for field in fields:
+            new_fields.extend([field, field+".DATE"])
+
         with open(os.path.join(meta_dir, "instruments.txt")) as f:
             instruments = [x.strip("\n") for x in f]
-        return fields, instruments
+        return new_fields, instruments
 
     def get_single_batch(self, instruments, fields=None):
         def ffill(c):
@@ -161,16 +72,18 @@ class EikonHelper:
                 "EDate": -self.time_period,
                 "FRQ": "FY",
                 "Curn": "Native"
-            }
+            },
+            field_name=True
         )[0])
 
         return (df
             .lazy()
             .rename({k: k.strip() for k in df.columns})
-            .with_columns([fill_null(c) for c in EikonHelper.static_fields])
-            .with_columns([ffill(c) for c in EikonHelper.static_fields])
-            .with_columns([pl.col(c).cast(pl.Float64) for c in EikonHelper.dynamic_fields])
-            .with_columns(Date=date_func(pl.col("Date")))
+            .rename({"None": "Instrument"})
+            # .with_columns([fill_null(c) for c in EikonHelper.static_fields])
+            # .with_columns([ffill(c) for c in EikonHelper.static_fields])
+            # .with_columns([pl.col(c).cast(pl.Float64) for c in EikonHelper.dynamic_fields])
+            # .with_columns(Date=date_func(pl.col("Date")))
         )
     
     def save_data(self):
@@ -206,8 +119,10 @@ class EikonHelper:
         for i, instruments in tqdm(enumerate(batch), total=len(batch)):
             try:
                 df = self.get_single_batch(instruments=instruments)
+                
                 self.data = pl.concat([self.data, df])
+                self.save_data()
+                time.sleep(15)
             except Exception as e:
                 print(e, instruments)
                 continue
-        return self.save_data()

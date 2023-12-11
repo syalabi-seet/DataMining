@@ -1,4 +1,8 @@
---index-url https://bcms.bloomberg.com/pip/simple
+jupyter
+ipykernel
+ipywidgets
+
+--extra-index-url https://bcms.bloomberg.com/pip/simple
 blpapi
 
 xbbg
@@ -6,3 +10,7 @@ refinitiv-data
 pandas
 openpyxl
 loguru
+polars
+tqdm
+eikon
+regex
