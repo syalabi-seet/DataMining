@@ -56,27 +56,27 @@ class EikonHelper:
 
     def get_metadata(self):
         meta_dir = os.path.join("assets", "metadata")
-        # with open(os.path.join(meta_dir, "fields.txt")) as f:
-        #     fields = list(set([x.strip("\n") for x in f]))
-        fields = [
-            "TR.TICKERSYMBOL",
-            "TR.ISINCODE",
-            "TR.EXCHANGECOUNTRY",
-            "TR.CO2EMISSIONTOTAL", 
-            "TR.CO2EMISSIONTOTAL.DATE", 
-            "TR.CO2DIRECTSCOPE1", 
-            "TR.CO2DIRECTSCOPE1.DATE",
-            "TR.CO2INDIRECTSCOPE2",
-            "TR.CO2INDIRECTSCOPE2.DATE",
-            "TR.CO2ESTIMATIONMETHOD",
-            "TR.CO2ESTIMATIONMETHOD.DATE",
-            "TR.ANALYTICESTIMATEDCO2TOTAL",
-            "TR.ANALYTICESTIMATEDCO2TOTAL.DATE",
-            "TR.CO2INDIRECTSCOPE3",
-            "TR.CO2INDIRECTSCOPE3.DATE",
-            "TR.ANALYTICCO2",
-            "TR.ANALYTICCO2.DATE"
-        ]
+        with open(os.path.join(meta_dir, "fields.txt")) as f:
+            fields = list(set([x.strip("\n") for x in f]))
+        # fields = [
+        #     "TR.TICKERSYMBOL",
+        #     "TR.ISINCODE",
+        #     "TR.EXCHANGECOUNTRY",
+        #     "TR.CO2EMISSIONTOTAL", 
+        #     "TR.CO2EMISSIONTOTAL.DATE", 
+        #     "TR.CO2DIRECTSCOPE1", 
+        #     "TR.CO2DIRECTSCOPE1.DATE",
+        #     "TR.CO2INDIRECTSCOPE2",
+        #     "TR.CO2INDIRECTSCOPE2.DATE",
+        #     "TR.CO2ESTIMATIONMETHOD",
+        #     "TR.CO2ESTIMATIONMETHOD.DATE",
+        #     "TR.ANALYTICESTIMATEDCO2TOTAL",
+        #     "TR.ANALYTICESTIMATEDCO2TOTAL.DATE",
+        #     "TR.CO2INDIRECTSCOPE3",
+        #     "TR.CO2INDIRECTSCOPE3.DATE",
+        #     "TR.ANALYTICCO2",
+        #     "TR.ANALYTICCO2.DATE"
+        # ]
 
         with open(os.path.join(meta_dir, "instruments.txt")) as f:
             instruments = [x.strip("\n") for x in f]
@@ -116,7 +116,7 @@ class EikonHelper:
 
     def get_data(self):
         if os.path.exists(self.save_path):
-            self.data = pd.read_parquet(self.save_path)
+            self.data = pd.read_parquet(self.save_path, dtype_backend="numpy_nullable")
         else:
             self.data = self.get_single_batch(instruments=["AAPL.OQ", "AMZN.OQ"])
             self.save_data()
